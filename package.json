@@ -4,6 +4,7 @@
   "description": "Grid system for Aurora Kit",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/aurora-kit/aurora-grid/issues"
   },
-  "homepage": "https://github.com/aurora-kit/aurora-grid"
+  "homepage": "https://github.com/aurora-kit/aurora-grid",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-header": "^1.7.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-size": "^2.0.0"
+  }
 }
