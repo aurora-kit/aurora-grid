@@ -1,0 +1,23 @@
+{
+  "name": "aurora-grid",
+  "version": "1.0.0",
+  "description": "Grid system for Aurora Kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aurora-kit/aurora-grid.git"
+  },
+  "keywords": [
+    "grid",
+    "responsive"
+  ],
+  "author": "@elrumordelaluz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aurora-kit/aurora-grid/issues"
+  },
+  "homepage": "https://github.com/aurora-kit/aurora-grid"
+}
