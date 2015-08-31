@@ -1,1 +1,10 @@
-// Aurora Grid :: Elements
+// Aurora Grid :: Defaults
+
+html {
+  font-size: $ae-font-size;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

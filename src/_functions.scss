@@ -1,1 +1,135 @@
 // Aurora Grid :: Functions
+
+
+// General stuff
+
+%clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Breakpoints stuff
+@mixin ae-media-min($bp, $bps: $ae-breakpoints) {
+  $size: map-get($bps, $bp);
+  // @if($size != 0){
+    @media (min-width: $size) {
+      @content;
+    }  
+  // }
+}
+
+// Gird stuff
+@mixin ae-grid-item-cols($col, $cols: $ae-columns) {
+  flex: 0 0 percentage($col / $cols);
+  @if $ae-grid-float {
+    width: percentage($col / $cols);
+  }
+}
+
+@mixin ae-item-offset($col, $cols: $ae-columns) {
+  margin-left: percentage($col / $cols);
+}
+
+@mixin ae-item-push($col, $cols: $ae-columns) {
+  left: if($col > 0, percentage($col / $cols), auto);
+}
+
+@mixin ae-item-pull($col, $cols: $ae-columns) {
+  right: if($col > 0, percentage($col / $cols), auto);
+}
+
+
+// Create grid
+
+@mixin ae-container($gut: $ae-gutter, $max-width: $ae-container-max-width) {
+  @extend %clearfix;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($gut / 2);
+  padding-right: ($gut / 2);
+  
+  $units: em, ex, ch, rem, vh, vw, vmin, vmax, px, mm, cm, in, pt, pc, '%';
+
+  @if type-of($max-width) == number {
+    @if not unitless($max-width) and index($units, unit($max-width)) {
+      max-width: $max-width;  
+    }
+  } @else if type-of($max-width) == map {
+    @each $bp, $size in $max-width {
+      @include ae-media-min($bp) {
+        max-width: $size;
+      }
+    }
+  }
+}
+
+@mixin ae-grid($gut: $ae-gutter) {
+  @if $ae-grid-float { @extend %clearfix; }
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: ($gut / -2);
+  margin-right: ($gut / -2);
+}
+
+@mixin ae-grid-item($gut: $ae-gutter) {
+  min-height: 1px;
+  padding-left: $gut / 2;
+  padding-right: $gut / 2;
+  position: relative;
+  @if $ae-grid-float { float: left; }
+}
+
+@mixin ae-grid-items($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints) {
+  
+  .#{$ae}-grid__item {
+    min-height: 1px;
+    padding-left: $gut / 2;
+    padding-right: $gut / 2;
+    position: relative;    
+  }
+
+  @each $bp in map-keys($bps) {
+    // @for $i from 1 through $cols {
+    //   .item-#{$bp}-#{$i} {
+    //     @extend %item;
+    //   }
+    // }
+    
+    @include ae-media-min($bp) {
+
+      .item-#{$bp}--auto {
+        flex: 1 0 0;
+      }
+
+      @for $i from 1 through $cols {
+        .item-#{$bp}-#{$i} {
+          @if $ae-grid-float { float: left; }
+          @include ae-grid-item-cols($i, $cols);
+        }
+      } // for
+
+      @each $move in (pull, push, offset) {
+        @for $i from 1 through $cols {
+          .item-#{$bp}--#{$move}-#{$i} {
+            @if $move == push {
+              @include ae-item-push($i, $cols);
+            } @else if $move == pull {
+              @include ae-item-pull($i, $cols);
+            } @else if $move == offset {
+              @include ae-item-offset($i, $cols);
+            }
+          }
+        }
+      } // each
+
+    } // ae-media-min()
+
+  }
+
+}

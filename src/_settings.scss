@@ -1,1 +1,31 @@
 // Aurora Grid :: Settings
+
+$ae: 'ae'; // prefix for classes
+
+$global-box-model: false;
+$ae-grid-float: false;
+
+$ae-font-size: 16px !default; // apply to <html> element
+$ae-columns: 12 !default;
+$ae-gutter: 1.25rem !default;
+
+$ae-container-fixed-width: 980px;
+$ae-container-widths: (
+  sm: 40rem,
+  md: 48.75rem,
+  lg: 62rem,
+  xl: 72.25rem
+) !default;
+
+$ae-container-max-width: $ae-container-widths !default; 
+// $ae-container-max-width: null !default; 
+// $ae-container-max-width: $ae-container-fixed-width !default; 
+
+$ae-breakpoints: (
+  xs: 0,
+  sm: 40em,
+  md: 52em,
+  lg: 64em,
+  xl: 75em
+) !default;
+

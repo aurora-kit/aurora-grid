@@ -1,1 +1,11 @@
 // Aurora Grid :: Objects
+
+.#{$ae}-container {
+  @include ae-container();
+}
+
+.#{$ae}-grid {
+  @include ae-grid();
+}
+
+@include ae-grid-items();
