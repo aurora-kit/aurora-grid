@@ -1,6 +1,5 @@
 // Aurora Grid :: Functions
 
-
 // General stuff
 
 %clearfix {
@@ -14,39 +13,107 @@
   }
 }
 
-// Breakpoints stuff
-@mixin ae-media-min($bp, $bps: $ae-breakpoints) {
-  $size: map-get($bps, $bp);
-  // @if($size != 0){
-    @media (min-width: $size) {
-      @content;
-    }  
-  // }
+@function em($px, $fz: $ae-font-size) {
+    @if unitless($px) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
+        @return em($px * 1px, $fz);
+    } @else if unit($px) == em {
+        @return $px;
+    }
+    @return ($px / $fz) * 1em;
 }
 
-// Gird stuff
-@mixin ae-grid-item-cols($col, $cols: $ae-columns) {
+/// ae-breakpoints :: @mixin to set breakpoints
+/// @param {String | Number}  $min [null]             - Value to set `min-width` query or key map that represents it
+/// @param {String | Number}  $max [null]             - Value to set `max-width` query or key map that represents it
+/// @param {String}           $type [all]             - Media type like `screen` or `print`
+/// @param {Map}              $bps [$ae-breakpoints]  - Map to find $min or $max params if necessary
+@mixin ae-breakpoints($min:null, $max: null, $type: all, $bps: $ae-breakpoints) {
+  
+  // Min
+  @if type-of($min) == number {
+    $min-val: if($min != 0, em($min), 0);
+  } @else {
+    $min-val: if(map-has-key($bps, $min), if(map-get($bps, $min) != 0, em(map-get($bps, $min)), 0), null);
+  }
+
+  // Max
+  @if type-of($max) == number {
+      $max-val: em($max);
+  } @else {
+      $max-val: if(map-has-key($bps, $max), em(map-get($bps, $max) - .01em), null);
+  }
+
+  // Output
+  $query: null;
+  $min-query: if($min-val and $min-val != 0, '(min-width: #{$min-val})', null);
+  $max-query: if($max-val, '(max-width: #{$max-val})', null);
+  $type-query: if($type == all and ($min-val or $max-val), null, $type );
+  $queries: (
+    type: $type-query,
+    min: $min-query,
+    max: $max-query
+  );
+  
+  @each $prop, $value in $queries {
+    @if map-get($queries, $prop) {
+      @if not $query {
+        $query: #{$value};
+      } @else {
+        $query: #{$query} and #{$value};
+      }
+    }
+  }
+  
+  @if $min-val and not $min-query and not $max-query {
+    @content;
+  } @else {
+    @media #{$query} {
+      @content;
+    }
+  }
+
+}
+
+
+/// ae-item-space :: @mixin to set the space for an item
+/// @param {Number}  $col                     - The quantity of columns to fill
+/// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
+@mixin ae-item-space($col, $cols: $ae-columns) {
   flex: 0 0 percentage($col / $cols);
   @if $ae-grid-float {
     width: percentage($col / $cols);
   }
 }
 
+
+/// ae-item-offset :: @mixin to set the offset for an item
+/// @param {Number}  $col                     - The quantity of columns to move
+/// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
 @mixin ae-item-offset($col, $cols: $ae-columns) {
   margin-left: percentage($col / $cols);
 }
 
+
+/// ae-item-push :: @mixin to push right an item
+/// @param {Number}  $col                     - The quantity of columns to move
+/// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
 @mixin ae-item-push($col, $cols: $ae-columns) {
   left: if($col > 0, percentage($col / $cols), auto);
 }
 
+
+/// ae-item-push :: @mixin to pull left an item
+/// @param {Number}  $col                     - The quantity of columns to move
+/// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
 @mixin ae-item-pull($col, $cols: $ae-columns) {
   right: if($col > 0, percentage($col / $cols), auto);
 }
 
 
-// Create grid
-
+/// ae-container :: @mixin to set the styles for a Container element
+/// @param {Number}  $gut [$ae-gutter]                                 - The gutter to apply on both sides
+/// @param {Number | Map}  $max-whidth [$ae-container-max-width]       - The max width, static or responsive (in case the value is a Map)
 @mixin ae-container($gut: $ae-gutter, $max-width: $ae-container-max-width) {
   @extend %clearfix;
   margin-right: auto;
@@ -62,13 +129,15 @@
     }
   } @else if type-of($max-width) == map {
     @each $bp, $size in $max-width {
-      @include ae-media-min($bp) {
+      @include ae-breakpoints($bp) {
         max-width: $size;
       }
     }
   }
 }
 
+/// ae-grid :: @mixin to set the styles for a Grid element
+/// @param {Number}  $gut [$ae-gutter]        - The gutter to balance on both sides
 @mixin ae-grid($gut: $ae-gutter) {
   @if $ae-grid-float { @extend %clearfix; }
   display: flex;
@@ -77,6 +146,8 @@
   margin-right: ($gut / -2);
 }
 
+/// ae-grid-item :: @mixin to set the styles for a Grid Item element
+/// @param {Number}  $gut [$ae-gutter]        - The gutter to apply on both sides
 @mixin ae-grid-item($gut: $ae-gutter) {
   min-height: 1px;
   padding-left: $gut / 2;
@@ -85,6 +156,10 @@
   @if $ae-grid-float { float: left; }
 }
 
+/// ae-grid :: @mixin to set the styles for a Grid element
+/// @param {Number}  $cols [$ae-columns]             - The total of columns
+/// @param {Number}  $gut [$ae-gutter]               - The gutter to apply on both sides of each item
+/// @param {Map}     $bps [$ae-breakpoints]          - The breakpoints on which loop and set the media queries
 @mixin ae-grid-items($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints) {
   
   .#{$ae}-grid__item {
@@ -95,13 +170,8 @@
   }
 
   @each $bp in map-keys($bps) {
-    // @for $i from 1 through $cols {
-    //   .item-#{$bp}-#{$i} {
-    //     @extend %item;
-    //   }
-    // }
-    
-    @include ae-media-min($bp) {
+
+    @include ae-breakpoints($bp) {
 
       .item-#{$bp}--auto {
         flex: 1 0 0;
@@ -110,9 +180,9 @@
       @for $i from 1 through $cols {
         .item-#{$bp}-#{$i} {
           @if $ae-grid-float { float: left; }
-          @include ae-grid-item-cols($i, $cols);
+          @include ae-item-space($i, $cols);
         }
-      } // for
+      }
 
       @each $move in (pull, push, offset) {
         @for $i from 1 through $cols {
@@ -126,9 +196,9 @@
             }
           }
         }
-      } // each
+      }
 
-    } // ae-media-min()
+    }
 
   }
 
