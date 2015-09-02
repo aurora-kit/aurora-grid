@@ -1,1 +1,28 @@
 // Aurora Grid :: Helpers
+
+.#{$ae}-grid--collapse {
+  margin-left: 0;
+  margin-right: 0;
+
+  > .#{$ae}-grid__item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.#{$ae}-grid--deepcollapse {
+  &, & .#{$ae}-grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .#{$ae}-grid__item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.#{$ae}-grid__item--collapse {
+  padding-left: 0;
+  padding-right: 0;
+}
