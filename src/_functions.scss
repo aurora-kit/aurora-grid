@@ -55,24 +55,6 @@
 }
 
 
-/// ae-grid-debugging :: @mixin to apply the @ae-set-debug @mixin on Grid elements
-@mixin ae-gird-debugging() {
-
-  .#{$ae}-container {
-    @include ae-set-debug(map-get($debug-colors, high), 1px, false);
-  }
-
-  .#{$ae}-grid { 
-    @include ae-set-debug(map-get($debug-colors, mid), -1px, false);
-  }
-
-  .#{$ae}-grid__item {
-    @include ae-set-debug(map-get($debug-colors, low), -2px, true, 3);
-  }
-
-}
-
-
 /// ae-breakpoints :: @mixin to set breakpoints
 /// @param {String | Number}  $min [null]             - Value to set `min-width` query or key map that represents it
 /// @param {String | Number}  $max [null]             - Value to set `max-width` query or key map that represents it

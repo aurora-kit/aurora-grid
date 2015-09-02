@@ -1,5 +1,13 @@
 // Aurora Grid :: Debug
 
-@if $ae-grid-debug {
-  @include ae-gird-debugging;
+.#{$ae}-container {
+  @include ae-set-debug(map-get($debug-colors, high), 1px, false);
+}
+
+.#{$ae}-grid { 
+  @include ae-set-debug(map-get($debug-colors, mid), -1px, false);
+}
+
+.#{$ae}-grid__item {
+  @include ae-set-debug(map-get($debug-colors, low), -2px, true, 3);
 }
