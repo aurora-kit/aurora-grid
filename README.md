@@ -1,2 +1,2 @@
-# Aurora Grid
-A grid system for Aurora Kit.
+# Auroræ Grid
+A grid system for Auroræ Kit.

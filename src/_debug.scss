@@ -1,4 +1,4 @@
-// Aurora Grid :: Debug
+// Auroræ Grid :: Debug
 
 .#{$ae}-container {
   @include ae-visual-debug(map-get($debug-colors, high), 1px, false);
