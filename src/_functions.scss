@@ -1,7 +1,7 @@
 // Aurora Grid :: Functions
 
-// General stuff
 
+/// %clearfix :: placeholder 
 %clearfix {
   &:before,
   &:after {
@@ -13,15 +13,65 @@
   }
 }
 
+
+/// em :: @function to transform px (an unitless) to em 
+/// @param {Number}  $px                      - Value to calculate in ems
+/// @param {Number}  $fz [$ae-font-size)]     - Base font size to make calculations
 @function em($px, $fz: $ae-font-size) {
     @if unitless($px) {
-        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
+        @warn "#{$px} must be in pixels. Transformed to #{$px}px.";
         @return em($px * 1px, $fz);
     } @else if unit($px) == em {
         @return $px;
     }
     @return ($px / $fz) * 1em;
 }
+
+
+/// ae-set-debug :: @mixin to set debuggin styles to an element
+/// @param {Color}    $col             - Color to apply on borders and background (on hover)
+/// @param {Number}   $offset          - Value to offset the outline if necessary
+/// @param {Boolean}  $hover [false]   - Enable the hover behavior
+/// @param {Number}   $nested [1]      - Quantity of nested elements to apply darken color, 1 no nested.
+@mixin ae-set-debug($col, $offset, $hover: false, $nested: 1) {
+  outline: 1px solid $col !important;
+  outline-offset: if($offset, $offset, 0);
+
+  @if $hover {
+    &:hover {
+      background-color: $col !important;
+    }
+
+    $nest: null;
+    @for $i from 1 to $nested {
+      $nest: $nest #{&};
+
+      #{$nest}:hover {
+       background-color: darken($col, 10*$i) !important; 
+      }
+    }
+    
+  }
+}
+
+
+/// ae-grid-debugging :: @mixin to apply the @ae-set-debug @mixin on Grid elements
+@mixin ae-gird-debugging() {
+
+  .#{$ae}-container {
+    @include ae-set-debug(map-get($debug-colors, high), 1px, false);
+  }
+
+  .#{$ae}-grid { 
+    @include ae-set-debug(map-get($debug-colors, mid), -1px, false);
+  }
+
+  .#{$ae}-grid__item {
+    @include ae-set-debug(map-get($debug-colors, low), -2px, true, 3);
+  }
+
+}
+
 
 /// ae-breakpoints :: @mixin to set breakpoints
 /// @param {String | Number}  $min [null]             - Value to set `min-width` query or key map that represents it
@@ -170,20 +220,16 @@
   }
 
   @each $bp in map-keys($bps) {
-
     @include ae-breakpoints($bp) {
-
       .item-#{$bp}--auto {
         flex: 1 0 0;
       }
-
       @for $i from 1 through $cols {
         .item-#{$bp}-#{$i} {
           @if $ae-grid-float { float: left; }
           @include ae-item-space($i, $cols);
         }
       }
-
       @each $move in (pull, push, offset) {
         @for $i from 1 through $cols {
           .item-#{$bp}--#{$move}-#{$i} {
@@ -197,9 +243,7 @@
           }
         }
       }
-
     }
-
   }
 
 }
