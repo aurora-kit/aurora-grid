@@ -225,6 +225,7 @@
       .item-#{$bp}--auto {
         flex: 1 0 0;
       }
+
       @for $i from 1 through $cols {
         .item-#{$bp}-#{$i} {
           @if $ae-grid-float { float: left; }
@@ -244,6 +245,27 @@
           }
         }
       }
+      
+      @if $ae-flex-align {
+        .item-#{$bp}--start { order: -1; }
+        .item-#{$bp}--end { order: 10; }
+        .item-#{$bp}--top { align-self: flex-start; }
+        .item-#{$bp}--center { align-self: center; }
+        .item-#{$bp}--bottom { align-self: flex-end; }
+
+        .items-#{$bp}--top { align-items: flex-start; }
+        .items-#{$bp}--center { align-items: center; }
+        .items-#{$bp}--bottom { align-items: flex-end; }
+      }
+
+      @if $ae-flex-order {
+        @for $i from 1 through $cols {
+          .item-#{$bp}--order-#{$i} {
+            order: $i;
+          }
+        }
+      }
+
     }
   }
 
