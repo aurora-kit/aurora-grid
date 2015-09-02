@@ -1,13 +1,19 @@
 // Aurora Grid :: Debug
 
 .#{$ae}-container {
-  @include ae-set-debug(map-get($debug-colors, high), 1px, false);
+  @include ae-visual-debug(map-get($debug-colors, high), 1px, false);
 }
 
 .#{$ae}-grid { 
-  @include ae-set-debug(map-get($debug-colors, mid), -1px, false);
+  @include ae-visual-debug(map-get($debug-colors, mid), -1px, false);
 }
 
 .#{$ae}-grid__item {
-  @include ae-set-debug(map-get($debug-colors, low), -2px, true, 3);
+  @include ae-visual-debug(map-get($debug-colors, low), -2px, true, 3);
+}
+
+@each $bp, $value in $ae-breakpoints {
+  @include ae-breakpoints($bp) {
+    @include ae-text-debug('#{$bp}: #{$value}', map-get($debug-colors, mid), map-get($debug-colors, zero));
+  }
 }

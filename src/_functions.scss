@@ -28,12 +28,12 @@
 }
 
 
-/// ae-set-debug :: @mixin to set debuggin styles to an element
+/// ae-visual-debug :: @mixin to set debuggin styles to an element
 /// @param {Color}    $col             - Color to apply on borders and background (on hover)
 /// @param {Number}   $offset          - Value to offset the outline if necessary
 /// @param {Boolean}  $hover [false]   - Enable the hover behavior
 /// @param {Number}   $nested [1]      - Quantity of nested elements to apply darken color, 1 no nested.
-@mixin ae-set-debug($col, $offset, $hover: false, $nested: 1) {
+@mixin ae-visual-debug($col, $offset, $hover: false, $nested: 1) {
   outline: 1px solid $col !important;
   outline-offset: if($offset, $offset, 0);
 
@@ -54,6 +54,25 @@
   }
 }
 
+
+/// ae-text-debug :: @mixin to set text on body for debugging purposes
+/// @param {String} $text             - Text to show on the upper right corner of the page
+/// @param {Color}  $color            - Text color 
+/// @param {Color}  $bg               - Background color
+@mixin ae-text-debug($text, $color, $bg) {
+  body:after {
+    background-color: rgba($bg, .7);
+    color: $color;
+    font: 16px/1.5 sans-serif;
+    padding: 5px 8px;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 900;
+    content: '#{$text}';
+  }
+}
 
 /// ae-breakpoints :: @mixin to set breakpoints
 /// @param {String | Number}  $min [null]             - Value to set `min-width` query or key map that represents it
