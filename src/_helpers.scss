@@ -26,3 +26,10 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+.#{$ae}-grid--equal {
+  .#{$ae}-grid__item {
+    display: flex;
+    flex: 1;
+  }
+}

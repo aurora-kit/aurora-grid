@@ -223,7 +223,7 @@
   @each $bp in map-keys($bps) {
     @include ae-breakpoints($bp) {
       .item-#{$bp}--auto {
-        flex: 1 0 0;
+        flex: 1;
       }
 
       @for $i from 1 through $cols {
