@@ -27,9 +27,29 @@
   padding-right: 0;
 }
 
-.#{$ae}-grid--equal {
+.#{$ae}-grid--equal-height {
   .#{$ae}-grid__item {
     display: flex;
     flex: 1;
+  }
+}
+
+.#{$ae}-grid--reverse {
+  flex-direction: row-reverse;
+}
+
+.#{$ae}-grid--column {
+  flex-direction: column;
+}
+
+.#{$ae}-grid--column-reverse {
+  flex-direction: column-reverse;
+}
+
+.#{$ae}-grid--column,
+.#{$ae}-grid--column-reverse {
+  .#{$ae}-grid__item {
+    padding-bottom: $ae-gutter / 2;
+    padding-top: $ae-gutter / 2;
   }
 }

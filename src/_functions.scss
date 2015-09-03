@@ -127,6 +127,21 @@
 }
 
 
+/// apply-in-breakpoints :: @mixin to apply classes in breakponts with a suffix
+/// @param {Map}  $bps [$ae-breakpoints]             - Map of breakpoints (name: size, ...)
+@mixin apply-in-breakpoints($bps: $ae-breakpoints) {
+  @each $bp in map-keys($bps) {
+    $_bp: $bp !global; 
+
+    @include ae-breakpoints($bp) {
+      @content;
+    }
+
+    $_bp: null;
+  } 
+}
+
+
 /// ae-item-space :: @mixin to set the space for an item
 /// @param {Number}  $col                     - The quantity of columns to fill
 /// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
