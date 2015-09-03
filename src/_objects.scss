@@ -9,3 +9,9 @@
 }
 
 @include ae-grid-items();
+
+@if $ae-masonry {
+  @include ae-masonry();
+}
+
+

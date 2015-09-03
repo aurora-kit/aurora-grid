@@ -285,3 +285,31 @@
   }
 
 }
+
+
+/// ae-masonry :: @mixin to set the styles for a Masonry grid
+/// @param {Number}  $cols [$ae-columns]             - The total of columns
+/// @param {Number}  $gut [$ae-gutter]               - The gutter to apply on both sides of each item
+/// @param {Map}     $bps [$ae-breakpoints]          - The breakpoints on which loop and set the media queries
+@mixin ae-masonry($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints) {
+  .#{$ae}-masonry {
+    column-gap: $gut;
+  }
+
+  .#{$ae}-masonry__item {
+    display: inline-block;
+    margin: 0 0 $gut/2;
+    width: 100%;
+  }
+  
+  @each $bp in map-keys($bps) {
+    @include ae-breakpoints($bp) {
+      @for $i from 1 through $cols {
+        .#{$ae}-masonry-#{$bp}-#{$i} {
+          column-count: $i;
+        }
+      }
+    }
+  }
+
+}
