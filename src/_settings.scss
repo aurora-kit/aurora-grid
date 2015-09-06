@@ -1,6 +1,6 @@
 // Auroræ Grid :: Settings
-
-$ae: 'ae'; // prefix for classes
+@import "../../aurora-shared/src/settings";
+// $ae: 'ae'; // prefix for classes
 
 $ae-grid-float: false;
 
@@ -9,14 +9,14 @@ $ae-flex-order: true;
 
 $ae-masonry: true;
 
-$debug-colors: (
-  high: #f42853,
-  mid: #4b527e,
-  low: #b8b9b1,
-  zero: #fff
-);
+// $debug-colors: (
+//   high: #f42853,
+//   mid: #4b527e,
+//   low: #b8b9b1,
+//   zero: #fff
+// );
 
-$ae-font-size: 16px !default; // apply to <html> element
+// $ae-font-size: 16px !default; // apply to <html> element
 $ae-columns: 12 !default;
 $ae-gutter: 1.25rem !default;
 
@@ -32,10 +32,10 @@ $ae-container-max-width: $ae-container-widths !default;
 // $ae-container-max-width: null !default; 
 // $ae-container-max-width: $ae-container-fixed-width !default; 
 
-$ae-breakpoints: (
-  xs: 0,
-  sm: 40em,
-  md: 52em,
-  lg: 64em,
-  xl: 75em
-) !default;
+// $ae-breakpoints: (
+//   xs: 0,
+//   sm: 40em,
+//   md: 52em,
+//   lg: 64em,
+//   xl: 75em
+// ) !default;
