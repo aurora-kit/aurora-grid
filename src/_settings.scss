@@ -1,6 +1,5 @@
 // Auroræ Grid :: Settings
-@import "../../aurora-shared/src/settings";
-// $ae: 'ae'; // prefix for classes
+@import '../../aurora-shared/src/settings';
 
 $ae-grid-float: false;
 
@@ -9,14 +8,6 @@ $ae-flex-order: true;
 
 $ae-masonry: true;
 
-// $debug-colors: (
-//   high: #f42853,
-//   mid: #4b527e,
-//   low: #b8b9b1,
-//   zero: #fff
-// );
-
-// $ae-font-size: 16px !default; // apply to <html> element
 $ae-columns: 12 !default;
 $ae-gutter: 1.25rem !default;
 
@@ -28,14 +19,8 @@ $ae-container-widths: (
   xl: 72.25rem
 ) !default;
 
+/// $ae-container-max-width 
+/// @var {null}     :: fluid container [ $ae-container-max-width: null !default ]
+/// @var {Number}   :: fixed container [ $ae-container-max-width: $ae-container-fixed-width !default ]
+/// @var {Map}      :: fixed container based on breakpoints
 $ae-container-max-width: $ae-container-widths !default; 
-// $ae-container-max-width: null !default; 
-// $ae-container-max-width: $ae-container-fixed-width !default; 
-
-// $ae-breakpoints: (
-//   xs: 0,
-//   sm: 40em,
-//   md: 52em,
-//   lg: 64em,
-//   xl: 75em
-// ) !default;
