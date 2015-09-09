@@ -128,6 +128,7 @@
 
 
 /// apply-in-breakpoints :: @mixin to apply classes in breakponts with a suffix
+/// suffif to use like ae-no-margin-#{$_bp} will be: ae-no-margin-sm, ae-no-margin-md, ... depending on the map passed
 /// @param {Map}  $bps [$ae-breakpoints]             - Map of breakpoints (name: size, ...)
 @mixin apply-in-breakpoints($bps: $ae-breakpoints) {
   @each $bp in map-keys($bps) {
