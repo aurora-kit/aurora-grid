@@ -38,7 +38,6 @@ gulp.task('scss', function() {
   return gulp.src('src/**/*.scss')
     .pipe(plumber({errorHandler: onError}))
     .pipe(sass())
-    .pipe(size({ gzip: true, showFiles: true }))
     .pipe(header(banner, { package : package }))
     .pipe(autoprefixer())
     .pipe(csscomb())
@@ -46,7 +45,6 @@ gulp.task('scss', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(cssmin())
     .pipe(size({ gzip: true, showFiles: true }))
-    .pipe(size({ gzip: false, showFiles: true }))
     .pipe(gulp.dest('dist/'))
     .pipe(notify({
       onLast: true,
