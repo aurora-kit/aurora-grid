@@ -9,7 +9,8 @@ $ae-flex-order: true;
 $ae-masonry: true;
 
 $ae-columns: 12 !default;
-$ae-gutter: 1.25rem !default;
+// $ae-gutter: 1.25rem !default;
+$ae-gutter: .5rem !default;
 
 $ae-container-fixed-width: 980px;
 $ae-container-widths: (
