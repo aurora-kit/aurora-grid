@@ -217,6 +217,7 @@
 /// ae-grid-item :: @mixin to set the styles for a Grid Item element
 /// @param {Number}  $gut [$ae-gutter]        - The gutter to apply on both sides
 @mixin ae-grid-item($gut: $ae-gutter) {
+  flex: 0 0 100%;
   min-height: 1px;
   padding-left: $gut / 2;
   padding-right: $gut / 2;
@@ -231,6 +232,7 @@
 @mixin ae-grid-items($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints) {
   
   .#{$ae}-grid__item {
+    flex: 0 0 100%;
     min-height: 1px;
     padding-left: $gut / 2;
     padding-right: $gut / 2;
