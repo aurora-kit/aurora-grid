@@ -3,6 +3,9 @@
 
 $ae-grid-float: false;
 
+/// $ae-flex-default-status
+/// @var {0 0 100%}     :: valid `flex` shorthand value [ 0 0 100% ] [ 1 ] [ unset ] [ auto ]
+$ae-flex-default-status: 0 0 100% !default;
 $ae-flex-align: true;
 $ae-flex-order: true;
 

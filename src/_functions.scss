@@ -231,10 +231,13 @@
 /// @param {Number}  $cols [$ae-columns]             - The total of columns
 /// @param {Number}  $gut [$ae-gutter]               - The gutter to apply on both sides of each item
 /// @param {Map}     $bps [$ae-breakpoints]          - The breakpoints on which loop and set the media queries
+///
+/// TODO: is correct the term '.item-#{$bp}--auto' since the behaviour is 'equal' 
+///       and 'auto' should acts based on its content?
 @mixin ae-grid-items($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints) {
   
   .#{$ae}-grid__item {
-    flex: 0 0 100%;
+    flex: $ae-flex-default-status;
     min-height: 1px;
     padding-left: $gut / 2;
     padding-right: $gut / 2;
