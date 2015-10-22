@@ -168,6 +168,7 @@
 /// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
 @mixin ae-item-push($col, $cols: $ae-columns) {
   left: if($col > 0, percentage($col / $cols), auto);
+  right: auto;
 }
 
 
@@ -175,6 +176,7 @@
 /// @param {Number}  $col                     - The quantity of columns to move
 /// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
 @mixin ae-item-pull($col, $cols: $ae-columns) {
+  left: auto;
   right: if($col > 0, percentage($col / $cols), auto);
 }
 
@@ -252,7 +254,7 @@
         }
       }
       @each $move in (pull, push, offset) {
-        @for $i from 1 through $cols {
+        @for $i from 0 through $cols {
           .item-#{$bp}--#{$move}-#{$i} {
             @if $move == push {
               @include ae-item-push($i, $cols);
