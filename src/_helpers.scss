@@ -27,12 +27,18 @@
   padding-right: 0;
 }
 
-.#{$ae}-grid--equal-height {
+.#{$ae}-grid--equal-height,
+ .#{$ae}-grid--deep-equal-height {
   .#{$ae}-grid__item {
     display: flex;
   }
-  .#{$ae}-grid__item,
   .#{$ae}-grid {
+    flex: 1;
+  }
+}
+
+.#{$ae}-grid--deep-equal-height {
+  .#{$ae}-grid__item {
     flex: 1;
   }
 }
