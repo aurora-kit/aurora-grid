@@ -31,6 +31,10 @@
   .#{$ae}-grid__item {
     display: flex;
   }
+  .#{$ae}-grid__item,
+  .#{$ae}-grid {
+    flex: 1;
+  }
 }
 
 .#{$ae}-grid--reverse {
@@ -47,7 +51,13 @@
 
 .#{$ae}-grid--column,
 .#{$ae}-grid--column-reverse {
-  .#{$ae}-grid__item {
+  margin-bottom: ($ae-gutter / -2);
+  margin-top: ($ae-gutter / -2);
+}
+
+.#{$ae}-grid--column,
+.#{$ae}-grid--column-reverse {
+  > .#{$ae}-grid__item {
     padding-bottom: $ae-gutter / 2;
     padding-top: $ae-gutter / 2;
   }

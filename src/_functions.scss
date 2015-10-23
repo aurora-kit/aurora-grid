@@ -271,8 +271,6 @@
       }
       
       @if $ae-flex-align {
-        .item-#{$bp}--start { order: -1; }
-        .item-#{$bp}--end { order: 10; }
         .item-#{$bp}--top { align-self: flex-start; }
         .item-#{$bp}--center { align-self: center; }
         .item-#{$bp}--bottom { align-self: flex-end; }
@@ -283,6 +281,9 @@
       }
 
       @if $ae-flex-order {
+        .item-#{$bp}--start { order: -1; }
+        .item-#{$bp}--end { order: $cols + 1; }
+
         @for $i from 1 through $cols {
           .item-#{$bp}--order-#{$i} {
             order: $i;
