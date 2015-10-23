@@ -28,7 +28,9 @@
 }
 
 .#{$ae}-grid--equal-height {
-  align-items: stretch;
+  .#{$ae}-grid__item {
+    display: flex;
+  }
 }
 
 .#{$ae}-grid--reverse {
