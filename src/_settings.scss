@@ -23,6 +23,18 @@ $ae-container-widths: (
   xl: 72.25rem
 ) !default;
 
+$ae-container-fluid-widths: (
+  default: 95vw,
+  inner: 82vw,
+  full: 100%
+) !default;
+
+$ae-container-fluid-max-widths: (
+  default: 88.8888889em,
+  inner: 68.8888889em,
+  full: 100%
+) !default;
+
 /// $ae-container-max-width 
 /// @var {null}     :: fluid container [ $ae-container-max-width: null !default ]
 /// @var {Number}   :: fixed container [ $ae-container-max-width: $ae-container-fixed-width !default ]

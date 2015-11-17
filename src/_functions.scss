@@ -183,7 +183,7 @@
 
 /// ae-container :: @mixin to set the styles for a Container element
 /// @param {Number}  $gut [$ae-gutter]                                 - The gutter to apply on both sides
-/// @param {Number | Map}  $max-whidth [$ae-container-max-width]       - The max width, static or responsive (in case the value is a Map)
+/// @param {Number | Map}  $max-width [$ae-container-max-width]       - The max width, static or responsive (in case the value is a Map)
 @mixin ae-container($gut: $ae-gutter, $max-width: $ae-container-max-width) {
   @extend %clearfix;
   margin-right: auto;
@@ -204,6 +204,51 @@
       }
     }
   }
+}
+
+
+/// ae-container-fluid :: @mixin to set the styles for a fluid Container element
+/// @param {Number}  $gut [$ae-gutter]                                         - The gutter to apply on both sides
+/// @param {Number}  $gut [$ae-gutter]                                         - The gutter to apply on both sides
+/// @param {Number | Map}  $max-widths [$ae-container-fluid-max-widths]        - The max widths
+@mixin ae-container-fluid($gut: $ae-gutter, $width: $ae-container-fluid-widths, $max-width: $ae-container-fluid-max-widths) {
+  @extend %clearfix;
+  margin-right: auto;
+  margin-left: auto;
+  
+  $units: em, ex, ch, rem, vh, vw, vmin, vmax, px, mm, cm, in, pt, pc, '%';
+  
+  @if type-of($max-width) == number {
+    @if not unitless($max-width) and index($units, unit($max-width)) {
+      max-width: $max-width;
+      width: $width;  
+    }
+  } @else if type-of($max-width) == map {
+    
+    @include ae-breakpoints(sm) {
+      max-width: map-get($max-width, 'default');
+      width: map-get($width, 'default');
+      
+      &--inner {
+        max-width: map-get($max-width, 'inner');
+        width: map-get($width, 'inner');
+      }
+    }
+
+    &--full {
+      max-width: map-get($max-width, 'full');
+      padding-left: 0;
+      padding-right: 0;
+      width: map-get($width, 'full');
+    }
+    
+  }
+
+  @include ae-breakpoints($max: lg) {
+    padding-left: ($gut / 2);
+    padding-right: ($gut / 2);
+  }
+
 }
 
 /// ae-grid :: @mixin to set the styles for a Grid element

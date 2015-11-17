@@ -4,6 +4,10 @@
   @include ae-container();
 }
 
+.#{$ae}-container-fluid {
+  @include ae-container-fluid();
+}
+
 .#{$ae}-grid {
   @include ae-grid();
 }
