@@ -12,10 +12,19 @@
   @include ae-grid();
 }
 
+.#{$ae}-grid--alt {
+  @include ae-grid($ae-gutter-alt)
+}
+
+.#{$ae}-grid__item--alt {
+  @include ae-grid-item($ae-gutter-alt)
+}
+
 @include ae-grid-items();
 
 @if $ae-masonry {
   @include ae-masonry();
 }
+
 
 

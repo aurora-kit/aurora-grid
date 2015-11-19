@@ -264,12 +264,12 @@
 /// ae-grid-item :: @mixin to set the styles for a Grid Item element
 /// @param {Number}  $gut [$ae-gutter]        - The gutter to apply on both sides
 @mixin ae-grid-item($gut: $ae-gutter) {
-  flex: 0 0 100%;
+  flex: $ae-flex-default-status;
   min-height: 1px;
   padding-left: $gut / 2;
   padding-right: $gut / 2;
   position: relative;
-  @if $ae-grid-float { float: left; }
+  // @if $ae-grid-float { float: left; }
 }
 
 /// ae-grid :: @mixin to set the styles for a Grid element
@@ -279,7 +279,7 @@
 ///
 /// TODO: is correct the term '.item-#{$bp}--auto' since the behaviour is 'equal' 
 ///       and 'auto' should acts based on its content?
-@mixin ae-grid-items($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints) {
+@mixin ae-grid-items($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints, $move: true, $flex-align: $ae-flex-align, $flex-order: $ae-flex-order) {
   
   .#{$ae}-grid__item {
     flex: $ae-flex-default-status;
@@ -301,21 +301,24 @@
           @include ae-item-space($i, $cols);
         }
       }
-      @each $move in (pull, push, offset) {
-        @for $i from 0 through $cols {
-          .item-#{$bp}--#{$move}-#{$i} {
-            @if $move == push {
-              @include ae-item-push($i, $cols);
-            } @else if $move == pull {
-              @include ae-item-pull($i, $cols);
-            } @else if $move == offset {
-              @include ae-item-offset($i, $cols);
+      
+      @if $move {
+        @each $m in (pull, push, offset) {
+          @for $i from 0 through $cols {
+            .item-#{$bp}--#{$m}-#{$i} {
+              @if $m == push {
+                @include ae-item-push($i, $cols);
+              } @else if $m == pull {
+                @include ae-item-pull($i, $cols);
+              } @else if $m == offset {
+                @include ae-item-offset($i, $cols);
+              }
             }
           }
         }
       }
       
-      @if $ae-flex-align {
+      @if $flex-align {
         .item-#{$bp}--top { align-self: flex-start; }
         .item-#{$bp}--center { align-self: center; }
         .item-#{$bp}--bottom { align-self: flex-end; }
@@ -325,7 +328,7 @@
         .items-#{$bp}--bottom { align-items: flex-end; }
       }
 
-      @if $ae-flex-order {
+      @if $flex-order {
         .item-#{$bp}--start { order: -1; }
         .item-#{$bp}--end { order: $cols + 1; }
 
