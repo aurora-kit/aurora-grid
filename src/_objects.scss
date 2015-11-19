@@ -13,11 +13,23 @@
 }
 
 .#{$ae}-grid--alt {
-  @include ae-grid($ae-gutter-alt)
+  @include ae-grid($ae-gutter-alt);
+
+  @for $i from 1 to ($ae-columns - 1) {
+    &#{$i} {
+      @include ae-grid( $ae-gutter-alt-magic-number / $i);
+    }
+  }
 }
 
 .#{$ae}-grid__item--alt {
-  @include ae-grid-item($ae-gutter-alt)
+  @include ae-grid-item($ae-gutter-alt);
+
+  @for $i from 1 to ($ae-columns - 1) {
+    &#{$i} {
+      @include ae-grid-item( $ae-gutter-alt-magic-number / $i);
+    }
+  }
 }
 
 @include ae-grid-items();

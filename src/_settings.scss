@@ -15,6 +15,7 @@ $ae-columns: 12 !default;
 // $ae-gutter: 1.25rem !default;
 $ae-gutter: .5rem !default;
 $ae-gutter-alt: 1.2766488% !default;
+$ae-gutter-alt-magic-number: $ae-gutter-alt * 12 !default;
 
 $ae-container-fixed-width: 980px;
 $ae-container-widths: (
