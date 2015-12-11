@@ -33,5 +33,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-size": "^2.0.0"
+  },
+  "dependencies": {
+    "aurora-shared": "^1.0.0"
   }
 }
