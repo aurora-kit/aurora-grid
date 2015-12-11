@@ -1,6 +1,6 @@
 {
   "name": "aurora-grid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Grid system for Aurora Kit",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,11 @@
     "grid",
     "responsive"
   ],
-  "author": "Lionel <lionel@pixeden.com> (http://pixeden.com)",
+  "author": {
+    "name": "Lionel",
+    "email": "lionel@pixeden.com",
+    "url": "http://pixeden.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aurora-kit/aurora-grid/issues"

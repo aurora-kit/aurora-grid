@@ -17,7 +17,7 @@ var banner = [
     ' <%= package.name %> ',
     'v<%= package.version %> \n ',
     '<%= package.description %> \n',
-    ' (c) ' + new Date().getFullYear() + ' <%= package.author %> \n',
+    ' (c) ' + new Date().getFullYear() + ' <%= package.author.name %> <<%= package.author.email %>> (<%= package.author.url %>) \n',
     ' <%= package.homepage %> \n',
     ' Licensed under ' + ' <%= package.license %> \n',
   '\\* * * * * * * * * * * * * * * * * * * * */',
