@@ -1,7 +1,7 @@
 // Auroræ Grid :: Settings
 @import '../node_modules/aurora-shared/src/settings';
 
-$ae-grid-float: false;
+$ae-grid-float: false !default;
 
 /// $ae-flex-default-status
 /// @var {0 0 100%}     :: valid `flex` shorthand value [ 0 0 100% ] [ 1 ] [ unset ] [ auto ]
