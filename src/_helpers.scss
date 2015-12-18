@@ -27,22 +27,6 @@
   padding-right: 0;
 }
 
-.#{$ae}-grid--equal-height,
-.#{$ae}-grid--deep-equal-height {
-  .#{$ae}-grid__item {
-    display: flex;
-  }
-  .#{$ae}-grid {
-    flex: 1;
-  }
-}
-
-.#{$ae}-grid--deep-equal-height {
-  .#{$ae}-grid__item {
-    flex: 1;
-  }
-}
-
 .#{$ae}-grid--reverse {
   flex-direction: row-reverse;
 }
@@ -64,7 +48,24 @@
 .#{$ae}-grid--column,
 .#{$ae}-grid--column-reverse {
   > .#{$ae}-grid__item {
+    flex: none;
     padding-bottom: $ae-gutter / 2;
     padding-top: $ae-gutter / 2;
+  }
+}
+
+.#{$ae}-grid--equal-height,
+.#{$ae}-grid--deep-equal-height {
+  .#{$ae}-grid__item {
+    display: flex;
+  }
+  .#{$ae}-grid {
+    flex: 1;
+  }
+}
+
+.#{$ae}-grid--deep-equal-height {
+  .#{$ae}-grid__item {
+    flex: 1;
   }
 }
