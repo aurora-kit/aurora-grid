@@ -9,7 +9,7 @@ It’s an easy, flexible and full of responsive and mobile first features, made 
 
 Use it to create modern website and apps with a strong focus on precise controlled layouts
 
-| [Documentation](http://themes-pixeden.com/aurora-kit/grid)  |  [Download](http://themes-pixeden.com/aurora-kit/grid) | from Pixeden
+| [Documentation](http://themes-pixeden.com/aurora-kit/grid)  |  [Download](http://themes-pixeden.com/aurora-kit/grid) | [Generator](http://themes-pixeden.com/aurora-kit/grid-generator)
 |----------|------:|------:|
 
 You can also install through `npm i aurora-grid`
@@ -34,8 +34,10 @@ The `scss` files are in `/src` folder. And your output files will be available o
 
 More information about Sass settings and functions [here](http://themes-pixeden.com/aurora-kit/grid.html#custom-settings)
 
-| [Documentation](http://themes-pixeden.com/aurora-kit/grid)  |  [Download](http://themes-pixeden.com/aurora-kit/grid) |
-|----------|------:|
+| [Documentation](http://themes-pixeden.com/aurora-kit/grid)  |  [Download](http://themes-pixeden.com/aurora-kit/grid) | [Generator](http://themes-pixeden.com/aurora-kit/grid-generator)
+|----------|------:|------:|
+
+
 
 ---
 &copy; 2015 [Pixeden](http://www.pixeden.com/)  |  [License](http://www.pixeden.com/license)
