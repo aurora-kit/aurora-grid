@@ -149,6 +149,7 @@
 /// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
 @mixin ae-item-space($col, $cols: $ae-columns) {
   flex: 0 0 percentage($col / $cols);
+  max-width: percentage($col / $cols);
   @if $ae-grid-float {
     width: percentage($col / $cols);
   }
