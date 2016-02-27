@@ -288,6 +288,7 @@
     padding-left: $gut / 2;
     padding-right: $gut / 2;
     position: relative;    
+    max-width: 100%;
   }
 
   @each $bp in map-keys($bps) {
