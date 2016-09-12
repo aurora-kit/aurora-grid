@@ -83,6 +83,7 @@
 @mixin ae-breakpoints($min:null, $max: null, $type: all, $bps: $ae-breakpoints) {
   
   // Min
+  $min-val: null;
   @if type-of($min) == number {
     $min-val: if($min != 0, em($min), 0);
   } @else {
@@ -90,6 +91,7 @@
   }
 
   // Max
+  $max-val: null;
   @if type-of($max) == number {
       $max-val: em($max);
   } @else {
