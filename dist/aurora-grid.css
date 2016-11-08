@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * *\ 
- aurora-grid v1.0.6 
+ aurora-grid v1.0.7 
  Grid system for Aurora Kit 
  (c) 2016 Lionel <lionel@pixeden.com> (http://pixeden.com) 
  https://github.com/aurora-kit/aurora-grid 
@@ -111,6 +111,7 @@ html {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  max-width: initial;
 }
 
 .item-xs-1 {
@@ -534,6 +535,7 @@ html {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    max-width: initial;
   }
   .item-sm-1 {
     -webkit-box-flex: 0;
@@ -887,6 +889,7 @@ html {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    max-width: initial;
   }
   .item-md-1 {
     -webkit-box-flex: 0;
@@ -1240,6 +1243,7 @@ html {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    max-width: initial;
   }
   .item-lg-1 {
     -webkit-box-flex: 0;
@@ -1593,6 +1597,7 @@ html {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    max-width: initial;
   }
   .item-xl-1 {
     -webkit-box-flex: 0;
