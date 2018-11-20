@@ -1,539 +1,856 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aurora Grid :: Tester</title>
-  <link rel="stylesheet" type="text/css" href="dist/aurora-grid.css">
-  <!-- <link rel="stylesheet" type="text/css" href="dist/aurora-grid-debug.css"> -->
-  <style type="text/css">
-    body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    .ae-test {
-      background-color: #d7d7d7;
-      color: white;
-      font: .8625rem/2 Menlo, Monaco, Consolas, "Courier New", monospace;
-      flex: 1;
-      text-align: center;
-      word-wrap: break-word;
-    }
-  </style>
-</head>
-<body>
-  <div class="ae-container">
-    <h1>Normal situations (@sm)</h1>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-12"><div class="ae-test">item-sm-12</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-6"><div class="ae-test">item-sm-6</div></div>
-      <div class="ae-grid__item item-sm-6"><div class="ae-test">item-sm-6</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-4"><div class="ae-test">item-sm-4</div></div>
-      <div class="ae-grid__item item-sm-4"><div class="ae-test">item-sm-4</div></div>
-      <div class="ae-grid__item item-sm-4"><div class="ae-test">item-sm-4</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-3"><div class="ae-test">item-sm-3</div></div>
-      <div class="ae-grid__item item-sm-3"><div class="ae-test">item-sm-3</div></div>
-      <div class="ae-grid__item item-sm-3"><div class="ae-test">item-sm-3</div></div>
-      <div class="ae-grid__item item-sm-3"><div class="ae-test">item-sm-3</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-2"><div class="ae-test">item-sm-2</div></div>
-      <div class="ae-grid__item item-sm-2"><div class="ae-test">item-sm-2</div></div>
-      <div class="ae-grid__item item-sm-2"><div class="ae-test">item-sm-2</div></div>
-      <div class="ae-grid__item item-sm-2"><div class="ae-test">item-sm-2</div></div>
-      <div class="ae-grid__item item-sm-2"><div class="ae-test">item-sm-2</div></div>
-      <div class="ae-grid__item item-sm-2"><div class="ae-test">item-sm-2</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-      <div class="ae-grid__item item-sm-1"><div class="ae-test">item-sm-1</div></div>
-    </div>
-    
-
-    <h1>Normal situations (@md)</h1>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-md-12"><div class="ae-test">item-md-12</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-md-6"><div class="ae-test">item-md-6</div></div>
-      <div class="ae-grid__item item-md-6"><div class="ae-test">item-md-6</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-md-4"><div class="ae-test">item-md-4</div></div>
-      <div class="ae-grid__item item-md-4"><div class="ae-test">item-md-4</div></div>
-      <div class="ae-grid__item item-md-4"><div class="ae-test">item-md-4</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-md-3"><div class="ae-test">item-md-3</div></div>
-      <div class="ae-grid__item item-md-3"><div class="ae-test">item-md-3</div></div>
-      <div class="ae-grid__item item-md-3"><div class="ae-test">item-md-3</div></div>
-      <div class="ae-grid__item item-md-3"><div class="ae-test">item-md-3</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-md-2"><div class="ae-test">item-md-2</div></div>
-      <div class="ae-grid__item item-md-2"><div class="ae-test">item-md-2</div></div>
-      <div class="ae-grid__item item-md-2"><div class="ae-test">item-md-2</div></div>
-      <div class="ae-grid__item item-md-2"><div class="ae-test">item-md-2</div></div>
-      <div class="ae-grid__item item-md-2"><div class="ae-test">item-md-2</div></div>
-      <div class="ae-grid__item item-md-2"><div class="ae-test">item-md-2</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-      <div class="ae-grid__item item-md-1"><div class="ae-test">item-md-1</div></div>
-    </div>
-
-
-    <h1>Normal situations (mixing @)</h1>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-8 item-md-6 item-lg-9"><div class="ae-test">item-sm-8 item-md-6 item-lg-9</div></div>
-      <div class="ae-grid__item item-sm-4 item-md-6 item-lg-3"><div class="ae-test">item-sm-4 item-md-6 item-lg-3</div></div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-6 item-md-4 item-lg-8"><div class="ae-test">item-sm-6 item-md-4 item-lg-8</div></div>
-      <div class="ae-grid__item item-sm-3 item-md-4 item-lg-2"><div class="ae-test">item-sm-3 item-md-4 item-lg-2</div></div>
-      <div class="ae-grid__item item-sm-3 item-md-4 item-lg-2"><div class="ae-test">item-sm-3 item-md-4 item-lg-2</div></div>
-    </div>
-
-
-    <h1>Push, Pull and offset</h1>
-    <h3>Push</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-6 item-sm--push-2">
-        <div class="ae-test">item-sm-6 tem-sm--push-2</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Grid :: Tester</title>
+    <link rel="stylesheet" type="text/css" href="dist/aurora-grid.css" />
+    <!--
+      <link rel="stylesheet" type="text/css" href="dist/aurora-grid-debug.css">
+    -->
+    <style type="text/css">
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+      .ae-test {
+        background-color: #d7d7d7;
+        color: white;
+        font: 0.8625rem/2 Menlo, Monaco, Consolas, 'Courier New', monospace;
+        flex: 1;
+        text-align: center;
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ae-container">
+      <h1>Normal situations (@sm)</h1>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-12">
+          <div class="ae-test">item-sm-12</div>
+        </div>
       </div>
-      <div class="ae-grid__item item-sm-2 item-sm--push-4">
-        <div class="ae-test">item-sm-2 item-sm--push-4</div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-6">
+          <div class="ae-test">item-sm-6</div>
+        </div>
+        <div class="ae-grid__item item-sm-6">
+          <div class="ae-test">item-sm-6</div>
+        </div>
       </div>
-    </div>
-    
-    <h3>Pull</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-4">
-        <div class="ae-test">item-sm-4</div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-4">
+          <div class="ae-test">item-sm-4</div>
+        </div>
+        <div class="ae-grid__item item-sm-4">
+          <div class="ae-test">item-sm-4</div>
+        </div>
+        <div class="ae-grid__item item-sm-4">
+          <div class="ae-test">item-sm-4</div>
+        </div>
       </div>
-      <div class="ae-grid__item item-sm-2 item-md--pull-2 item-lg--pull-4">
-        <div class="ae-test">item-sm-2 item-md--pull-2 item-lg--pull-4</div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-3">
+          <div class="ae-test">item-sm-3</div>
+        </div>
+        <div class="ae-grid__item item-sm-3">
+          <div class="ae-test">item-sm-3</div>
+        </div>
+        <div class="ae-grid__item item-sm-3">
+          <div class="ae-test">item-sm-3</div>
+        </div>
+        <div class="ae-grid__item item-sm-3">
+          <div class="ae-test">item-sm-3</div>
+        </div>
       </div>
-    </div>
-
-    <h3>Offset</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-4 item-sm--offset-2 item-md--offset-0 item-lg--offset-2">
-        <div class="ae-test">item-sm-4 item-sm--offset-2 item-md--offset-0 item-lg--offset-2</div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-2">
+          <div class="ae-test">item-sm-2</div>
+        </div>
+        <div class="ae-grid__item item-sm-2">
+          <div class="ae-test">item-sm-2</div>
+        </div>
+        <div class="ae-grid__item item-sm-2">
+          <div class="ae-test">item-sm-2</div>
+        </div>
+        <div class="ae-grid__item item-sm-2">
+          <div class="ae-test">item-sm-2</div>
+        </div>
+        <div class="ae-grid__item item-sm-2">
+          <div class="ae-test">item-sm-2</div>
+        </div>
+        <div class="ae-grid__item item-sm-2">
+          <div class="ae-test">item-sm-2</div>
+        </div>
       </div>
-      <div class="ae-grid__item item-sm-2">
-        <div class="ae-test">item-sm-2</div>
-      </div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-2 item-sm--offset-3">
-        <div class="ae-test">item-sm-2 item-sm--offset-3</div>
-      </div>
-      <div class="ae-grid__item item-sm-2 item-sm--offset-2">
-        <div class="ae-test">item-sm-2 item-sm--offset-2</div>
-      </div>
-    </div>
-    <h3>Complex</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-sm-6 item-sm--pull-2 item-md--push-0 item-lg--push-2">
-        <div class="ae-test">item-sm-6 tem-sm--pull-2 item-md--push-0 item-lg--push-2</div>
-      </div>
-      <div class="ae-grid__item item-sm-2 item-sm--push-4 item-lg--pull-6">
-        <div class="ae-test">item-sm-2 item-sm--push-4 item-lg--pull-6</div>
-      </div>
-    </div>
-
-
-    <h1>More on flexbox</h1>
-    <h3>Auto (default)</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item item-xs--auto</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item item-xs--auto</div>
-      </div>
-      <div class="ae-grid__item item-md--auto">
-        <div class="ae-test">item item-md--auto</div>
-      </div>
-      <div class="ae-grid__item item-md--auto">
-        <div class="ae-test">item item-md--auto</div>
-      </div>
-      <div class="ae-grid__item item-lg--auto">
-        <div class="ae-test">item item-lg--auto</div>
-      </div>
-      <div class="ae-grid__item item-lg--auto">
-        <div class="ae-test">item item-lg--auto</div>
-      </div>
-    </div>
-    
-    <h3>Auto (with fixed)</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-md-9 item-lg--auto">
-        <div class="ae-test">item-md-9 item-lg--auto</div>
-      </div>
-      <div class="ae-grid__item item-md--auto item-lg-11">
-        <div class="ae-test">item-md--auto item-lg-11</div>
-      </div>
-    </div>
-    
-    <h3>Auto (with movement)</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto item-sm--offset-1 item-lg--offset-0">
-        <div class="ae-test">item item-xs--auto item-sm--offset-1 item-lg--offset-0</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--offset-1">
-        <div class="ae-test">item item-xs--auto item-md--offset-1</div>
-      </div>
-    </div>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto item-md--push-1 item-lg--push-0">
-        <div class="ae-test">item item-xs--auto item-md--push-1 item-lg--push-0</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--pull-1 item-lg--pull-0">
-        <div class="ae-test">item item-xs--auto item-md--pull-1 item-lg--pull-0</div>
-      </div>
-    </div>
-
-
-    <h1>Helpers</h1>
-    <h3>Grid collapse (base)</h3>
-    <div class="ae-grid ae-grid--collapse">
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item item-xs--auto</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item item-xs--auto</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item item-xs--auto</div>
-      </div>
-    </div>
-    
-    <h3>Grid collapse (with nested grid)</h3>
-    <div class="ae-grid ae-grid--collapse">
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item item-xs--auto</div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
+        <div class="ae-grid__item item-sm-1">
+          <div class="ae-test">item-sm-1</div>
+        </div>
       </div>
 
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-grid">
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
+      <h1>Normal situations (@md)</h1>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-md-12">
+          <div class="ae-test">item-md-12</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-md-6">
+          <div class="ae-test">item-md-6</div>
+        </div>
+        <div class="ae-grid__item item-md-6">
+          <div class="ae-test">item-md-6</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-md-4">
+          <div class="ae-test">item-md-4</div>
+        </div>
+        <div class="ae-grid__item item-md-4">
+          <div class="ae-test">item-md-4</div>
+        </div>
+        <div class="ae-grid__item item-md-4">
+          <div class="ae-test">item-md-4</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-md-3">
+          <div class="ae-test">item-md-3</div>
+        </div>
+        <div class="ae-grid__item item-md-3">
+          <div class="ae-test">item-md-3</div>
+        </div>
+        <div class="ae-grid__item item-md-3">
+          <div class="ae-test">item-md-3</div>
+        </div>
+        <div class="ae-grid__item item-md-3">
+          <div class="ae-test">item-md-3</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-md-2">
+          <div class="ae-test">item-md-2</div>
+        </div>
+        <div class="ae-grid__item item-md-2">
+          <div class="ae-test">item-md-2</div>
+        </div>
+        <div class="ae-grid__item item-md-2">
+          <div class="ae-test">item-md-2</div>
+        </div>
+        <div class="ae-grid__item item-md-2">
+          <div class="ae-test">item-md-2</div>
+        </div>
+        <div class="ae-grid__item item-md-2">
+          <div class="ae-test">item-md-2</div>
+        </div>
+        <div class="ae-grid__item item-md-2">
+          <div class="ae-test">item-md-2</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+        <div class="ae-grid__item item-md-1">
+          <div class="ae-test">item-md-1</div>
+        </div>
+      </div>
+
+      <h1>Normal situations (mixing @)</h1>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-8 item-md-6 item-lg-9">
+          <div class="ae-test">item-sm-8 item-md-6 item-lg-9</div>
+        </div>
+        <div class="ae-grid__item item-sm-4 item-md-6 item-lg-3">
+          <div class="ae-test">item-sm-4 item-md-6 item-lg-3</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-6 item-md-4 item-lg-8">
+          <div class="ae-test">item-sm-6 item-md-4 item-lg-8</div>
+        </div>
+        <div class="ae-grid__item item-sm-3 item-md-4 item-lg-2">
+          <div class="ae-test">item-sm-3 item-md-4 item-lg-2</div>
+        </div>
+        <div class="ae-grid__item item-sm-3 item-md-4 item-lg-2">
+          <div class="ae-test">item-sm-3 item-md-4 item-lg-2</div>
+        </div>
+      </div>
+
+      <h1>Push, Pull and offset</h1>
+      <h3>Push</h3>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-6 item-sm--push-2">
+          <div class="ae-test">item-sm-6 tem-sm--push-2</div>
+        </div>
+        <div class="ae-grid__item item-sm-2 item-sm--push-4">
+          <div class="ae-test">item-sm-2 item-sm--push-4</div>
+        </div>
+      </div>
+
+      <h3>Pull</h3>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-4">
+          <div class="ae-test">item-sm-4</div>
+        </div>
+        <div class="ae-grid__item item-sm-2 item-md--pull-2 item-lg--pull-4">
+          <div class="ae-test">item-sm-2 item-md--pull-2 item-lg--pull-4</div>
+        </div>
+      </div>
+
+      <h3>Offset</h3>
+      <div class="ae-grid">
+        <div
+          class="ae-grid__item item-sm-4 item-sm--offset-2 item-md--offset-0 item-lg--offset-2"
+        >
+          <div class="ae-test">
+            item-sm-4 item-sm--offset-2 item-md--offset-0 item-lg--offset-2
           </div>
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
+        </div>
+        <div class="ae-grid__item item-sm-2">
+          <div class="ae-test">item-sm-2</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-sm-2 item-sm--offset-3">
+          <div class="ae-test">item-sm-2 item-sm--offset-3</div>
+        </div>
+        <div class="ae-grid__item item-sm-2 item-sm--offset-2">
+          <div class="ae-test">item-sm-2 item-sm--offset-2</div>
+        </div>
+      </div>
+      <h3>Complex</h3>
+      <div class="ae-grid">
+        <div
+          class="ae-grid__item item-sm-6 item-sm--pull-2 item-md--push-0 item-lg--push-2"
+        >
+          <div class="ae-test">
+            item-sm-6 tem-sm--pull-2 item-md--push-0 item-lg--push-2
           </div>
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
+        </div>
+        <div class="ae-grid__item item-sm-2 item-sm--push-4 item-lg--pull-6">
+          <div class="ae-test">item-sm-2 item-sm--push-4 item-lg--pull-6</div>
+        </div>
+      </div>
+
+      <h1>More on flexbox</h1>
+      <h3>Auto (default)</h3>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item item-xs--auto</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item item-xs--auto</div>
+        </div>
+        <div class="ae-grid__item item-md--auto">
+          <div class="ae-test">item item-md--auto</div>
+        </div>
+        <div class="ae-grid__item item-md--auto">
+          <div class="ae-test">item item-md--auto</div>
+        </div>
+        <div class="ae-grid__item item-lg--auto">
+          <div class="ae-test">item item-lg--auto</div>
+        </div>
+        <div class="ae-grid__item item-lg--auto">
+          <div class="ae-test">item item-lg--auto</div>
+        </div>
+      </div>
+
+      <h3>Auto (with fixed)</h3>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-md-9 item-lg--auto">
+          <div class="ae-test">item-md-9 item-lg--auto</div>
+        </div>
+        <div class="ae-grid__item item-md--auto item-lg-11">
+          <div class="ae-test">item-md--auto item-lg-11</div>
+        </div>
+      </div>
+
+      <h3>Auto (with movement)</h3>
+      <div class="ae-grid">
+        <div
+          class="ae-grid__item item-xs--auto item-sm--offset-1 item-lg--offset-0"
+        >
+          <div class="ae-test">
+            item item-xs--auto item-sm--offset-1 item-lg--offset-0
           </div>
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-md--offset-1">
+          <div class="ae-test">item item-xs--auto item-md--offset-1</div>
+        </div>
+      </div>
+      <div class="ae-grid">
+        <div
+          class="ae-grid__item item-xs--auto item-md--push-1 item-lg--push-0"
+        >
+          <div class="ae-test">
+            item item-xs--auto item-md--push-1 item-lg--push-0
+          </div>
+        </div>
+        <div
+          class="ae-grid__item item-xs--auto item-md--pull-1 item-lg--pull-0"
+        >
+          <div class="ae-test">
+            item item-xs--auto item-md--pull-1 item-lg--pull-0
           </div>
         </div>
       </div>
 
-    </div>
-
-    <h3>Grid collapse deep (with nested grid)</h3>
-    <div class="ae-grid ae-grid--deepcollapse">
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item item-xs--auto</div>
+      <h1>Helpers</h1>
+      <h3>Grid collapse (base)</h3>
+      <div class="ae-grid ae-grid--collapse">
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item item-xs--auto</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item item-xs--auto</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item item-xs--auto</div>
+        </div>
       </div>
 
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-grid">
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
-          </div>
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
-          </div>
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
-          </div>
-          <div class="ae-grid__item item-xs-3">
-            <div class="ae-test">item</div>
+      <h3>Grid collapse (with nested grid)</h3>
+      <div class="ae-grid ae-grid--collapse">
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item item-xs--auto</div>
+        </div>
+
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-grid">
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
           </div>
         </div>
       </div>
-      
-    </div>
-    
-    <h3>Item collapse (use case?)</h3>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item</div>
-      </div>
-      <div class="ae-grid__item ae-grid__item--collapse item-xs--auto">
-        <div class="ae-test">ae-grid__item--collapse</div>
-      </div>
-      <div class="ae-grid__item ae-grid__item--collapse item-xs--auto">
-        <div class="ae-test">ae-grid__item--collapse</div>
-      </div>
-    </div>
 
-    <h3>Equal height</h3>
-    <div class="ae-grid ae-grid--equal-height">
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">item</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium necessitatibus eius facere deserunt quae dolor dolorem deleniti nam odit pariatur. Ducimus distinctio accusamus sint asperiores temporibus nesciunt ullam autem fugit molestias. Accusantium, quidem, alias!</div>
-      </div>
-    </div>
+      <h3>Grid collapse deep (with nested grid)</h3>
+      <div class="ae-grid ae-grid--deepcollapse">
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item item-xs--auto</div>
+        </div>
 
-    <div class="ae-grid ae-grid--equal-height">
-      <div class="ae-grid__item item-sm-4 item-lg-3">
-        <div class="ae-test">item</div>
-      </div>
-      <div class="ae-grid__item item-sm-4 item-lg-6">
-        <div class="ae-test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dignissimos aliquam asperiores molestias laudantium blanditiis inventore, animi eligendi nesciunt perspiciatis.</div>
-      </div>
-      <div class="ae-grid__item item-sm-4 item-lg-3">
-        <div class="ae-test">item</div>
-      </div>
-    </div>
-
-    <h3>Flexbox @ Helpers</h3>
-    <h4>Align (default top)</h4>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto item-sm--center item-lg--bottom">
-        <div class="ae-test">item-sm--center item-lg--bottom</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis asperiores quia odio, nam labore veritatis possimus, maxime magni enim excepturi.</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-sm--bottom item-lg--top">
-        <div class="ae-test">item-sm--bottom item-lg--top</div>
-      </div>
-    </div>
-
-    <h4>Order (start and end)</h4>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto item-lg--end">
-        <div class="ae-test">[1] lg--end</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[2]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-lg--start">
-        <div class="ae-test">[3] lg--start</div>
-      </div>
-    </div>
-
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto item-md--end item-lg--start">
-        <div class="ae-test">[1] md--end lg--start</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--start item-lg--end">
-        <div class="ae-test">[2] md--start lg--end</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[3]</div>
-      </div>
-    </div>
-
-    <h4>Order (numbers) {set all columns}</h4>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto item-md--order-6 item-lg--order-4">
-        <div class="ae-test">@def > [1] <br> @md > [6] <br>@lg > [4]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--order-3 item-lg--order-3">
-        <div class="ae-test">@def > [2] <br> @md > [3] <br>@lg > [3]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--order-5 item-lg--end">
-        <div class="ae-test">@def > [3] <br> @md > [5] <br>@lg > [1]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--order-1 item-lg--order-6">
-        <div class="ae-test">@def > [4] <br> @md > [1] <br>@lg > [6]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--order-4 item-lg--order-2">
-        <div class="ae-test">@def > [5] <br> @md > [4] <br>@lg > [2]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-md--order-2 item-lg--order-5">
-        <div class="ae-test">@def > [6] <br> @md > [2] <br>@lg > [5]</div>
-      </div>
-    </div>
-
-    <h4>Order (mix) {always wins --start || --end and move the others}</h4>
-    <div class="ae-grid">
-      <div class="ae-grid__item item-xs--auto item-lg--order-4">
-        <div class="ae-test">@def > [1] <br> @lg > [4]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-lg--start">
-        <div class="ae-test">@def > [2] <br> @lg > [--start]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-lg--end">
-        <div class="ae-test">@def > [3] <br> @lg > [--end]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-lg--order-6">
-        <div class="ae-test">@def > [4] <br> @lg > [6]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-lg--order-2">
-        <div class="ae-test">@def > [5] <br> @lg > [2]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto item-lg--order-5">
-        <div class="ae-test">@def > [6] <br> @lg > [5]</div>
-      </div>
-    </div>
-
-
-    <h3>Direction</h3>
-    <h4>Reverse</h4>
-    <div class="ae-grid ae-grid--reverse">
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[1]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[2]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[3]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[4]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[5]</div>
-      </div>
-      <div class="ae-grid__item item-xs--auto">
-        <div class="ae-test">[6]</div>
-      </div>
-    </div>
-
-    <h4>Column <small>no need to specify number of columns since there are rows, height based on its content</small></h4>
-    <div class="ae-grid ae-grid--column ae-grid--column">
-      <div class="ae-grid__item item-sm--auto">
-        <div class="ae-test">[1]</div>
-      </div>
-      <div class="ae-grid__item item-sm--auto">
-        <div class="ae-test">[2] <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum distinctio voluptatibus sapiente provident!</div>
-      </div>
-      <div class="ae-grid__item item-sm--auto">
-        <div class="ae-test">[3]</div>
-      </div>
-    </div>
-
-    <h4>Column reverse <small>same for items count</small></h4>
-    <div class="ae-grid ae-grid--column-reverse">
-      <div class="ae-grid__item item-sm--auto">
-        <div class="ae-test">[1]</div>
-      </div>
-      <div class="ae-grid__item item-sm--auto">
-        <div class="ae-test">[2]</div>
-      </div>
-      <div class="ae-grid__item item-sm--auto">
-        <div class="ae-test">[3]</div>
-      </div>
-    </div>
-
-    <h4>Complex <small>--deep-equal-height and nested columns --column, --column-reverse and standard</small></h4>
-    <div class="ae-grid ae-grid--deep-equal-height">
-      <div class="ae-grid__item item-sm-4">
-        <div class="ae-grid ae-grid--column">
-          <div class="ae-grid__item">
-            <div class="ae-test">[col-1]</div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-grid">
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
+            <div class="ae-grid__item item-xs-3">
+              <div class="ae-test">item</div>
+            </div>
           </div>
-          <div class="ae-grid__item">
-            <div class="ae-test">[col-2]</div>
+        </div>
+      </div>
+
+      <h3>Item collapse (use case?)</h3>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item</div>
+        </div>
+        <div class="ae-grid__item ae-grid__item--collapse item-xs--auto">
+          <div class="ae-test">ae-grid__item--collapse</div>
+        </div>
+        <div class="ae-grid__item ae-grid__item--collapse item-xs--auto">
+          <div class="ae-test">ae-grid__item--collapse</div>
+        </div>
+      </div>
+
+      <h3>Equal height</h3>
+      <div class="ae-grid ae-grid--equal-height">
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">item</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Praesentium necessitatibus eius facere deserunt quae dolor dolorem
+            deleniti nam odit pariatur. Ducimus distinctio accusamus sint
+            asperiores temporibus nesciunt ullam autem fugit molestias.
+            Accusantium, quidem, alias!
           </div>
-          <div class="ae-grid__item">
-            <div class="ae-grid">
-              <div class="ae-grid__item item-sm-4">
-                <div class="ae-test">[1]</div>
-              </div>
-              <div class="ae-grid__item item-sm-4">
-                <div class="ae-test">[2]</div>
-              </div>
-              <div class="ae-grid__item item-sm-4">
-                <div class="ae-grid ae-grid--column-reverse">
-                  <div class="ae-grid__item">
-                    <div class="ae-test">[1]</div>
-                  </div>
-                  <div class="ae-grid__item">
-                    <div class="ae-test">[2]</div>
+        </div>
+      </div>
+
+      <div class="ae-grid ae-grid--equal-height">
+        <div class="ae-grid__item item-sm-4 item-lg-3">
+          <div class="ae-test">item</div>
+        </div>
+        <div class="ae-grid__item item-sm-4 item-lg-6">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+            dignissimos aliquam asperiores molestias laudantium blanditiis
+            inventore, animi eligendi nesciunt perspiciatis.
+          </div>
+        </div>
+        <div class="ae-grid__item item-sm-4 item-lg-3">
+          <div class="ae-test">item</div>
+        </div>
+      </div>
+
+      <h3>Flexbox @ Helpers</h3>
+      <h4>Align (default top)</h4>
+      <div class="ae-grid">
+        <div
+          class="ae-grid__item item-xs--auto item-sm--center item-lg--bottom"
+        >
+          <div class="ae-test">item-sm--center item-lg--bottom</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
+            asperiores quia odio, nam labore veritatis possimus, maxime magni
+            enim excepturi.
+          </div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-sm--bottom item-lg--top">
+          <div class="ae-test">item-sm--bottom item-lg--top</div>
+        </div>
+      </div>
+
+      <h4>Order (start and end)</h4>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-xs--auto item-lg--end">
+          <div class="ae-test">[1] lg--end</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[2]</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-lg--start">
+          <div class="ae-test">[3] lg--start</div>
+        </div>
+      </div>
+
+      <div class="ae-grid">
+        <div class="ae-grid__item item-xs--auto item-md--end item-lg--start">
+          <div class="ae-test">[1] md--end lg--start</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-md--start item-lg--end">
+          <div class="ae-test">[2] md--start lg--end</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[3]</div>
+        </div>
+      </div>
+
+      <h4>Order (numbers) {set all columns}</h4>
+      <div class="ae-grid">
+        <div
+          class="ae-grid__item item-xs--auto item-md--order-6 item-lg--order-4"
+        >
+          <div class="ae-test">
+            @def > [1] <br />
+            @md > [6] <br />@lg > [4]
+          </div>
+        </div>
+        <div
+          class="ae-grid__item item-xs--auto item-md--order-3 item-lg--order-3"
+        >
+          <div class="ae-test">
+            @def > [2] <br />
+            @md > [3] <br />@lg > [3]
+          </div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-md--order-5 item-lg--end">
+          <div class="ae-test">
+            @def > [3] <br />
+            @md > [5] <br />@lg > [1]
+          </div>
+        </div>
+        <div
+          class="ae-grid__item item-xs--auto item-md--order-1 item-lg--order-6"
+        >
+          <div class="ae-test">
+            @def > [4] <br />
+            @md > [1] <br />@lg > [6]
+          </div>
+        </div>
+        <div
+          class="ae-grid__item item-xs--auto item-md--order-4 item-lg--order-2"
+        >
+          <div class="ae-test">
+            @def > [5] <br />
+            @md > [4] <br />@lg > [2]
+          </div>
+        </div>
+        <div
+          class="ae-grid__item item-xs--auto item-md--order-2 item-lg--order-5"
+        >
+          <div class="ae-test">
+            @def > [6] <br />
+            @md > [2] <br />@lg > [5]
+          </div>
+        </div>
+      </div>
+
+      <h4>Order (mix) {always wins --start || --end and move the others}</h4>
+      <div class="ae-grid">
+        <div class="ae-grid__item item-xs--auto item-lg--order-4">
+          <div class="ae-test">
+            @def > [1] <br />
+            @lg > [4]
+          </div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-lg--start">
+          <div class="ae-test">
+            @def > [2] <br />
+            @lg > [--start]
+          </div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-lg--end">
+          <div class="ae-test">
+            @def > [3] <br />
+            @lg > [--end]
+          </div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-lg--order-6">
+          <div class="ae-test">
+            @def > [4] <br />
+            @lg > [6]
+          </div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-lg--order-2">
+          <div class="ae-test">
+            @def > [5] <br />
+            @lg > [2]
+          </div>
+        </div>
+        <div class="ae-grid__item item-xs--auto item-lg--order-5">
+          <div class="ae-test">
+            @def > [6] <br />
+            @lg > [5]
+          </div>
+        </div>
+      </div>
+
+      <h3>Direction</h3>
+      <h4>Reverse</h4>
+      <div class="ae-grid ae-grid--reverse">
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[1]</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[2]</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[3]</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[4]</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[5]</div>
+        </div>
+        <div class="ae-grid__item item-xs--auto">
+          <div class="ae-test">[6]</div>
+        </div>
+      </div>
+
+      <h4>
+        Column
+        <small
+          >no need to specify number of columns since there are rows, height
+          based on its content</small
+        >
+      </h4>
+      <div class="ae-grid ae-grid--column ae-grid--column">
+        <div class="ae-grid__item item-sm--auto">
+          <div class="ae-test">[1]</div>
+        </div>
+        <div class="ae-grid__item item-sm--auto">
+          <div class="ae-test">
+            [2] <br />Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Laborum distinctio voluptatibus sapiente provident!
+          </div>
+        </div>
+        <div class="ae-grid__item item-sm--auto">
+          <div class="ae-test">[3]</div>
+        </div>
+      </div>
+
+      <h4>Column reverse <small>same for items count</small></h4>
+      <div class="ae-grid ae-grid--column-reverse">
+        <div class="ae-grid__item item-sm--auto">
+          <div class="ae-test">[1]</div>
+        </div>
+        <div class="ae-grid__item item-sm--auto">
+          <div class="ae-test">[2]</div>
+        </div>
+        <div class="ae-grid__item item-sm--auto">
+          <div class="ae-test">[3]</div>
+        </div>
+      </div>
+
+      <h4>
+        Complex
+        <small
+          >--deep-equal-height and nested columns --column, --column-reverse and
+          standard</small
+        >
+      </h4>
+      <div class="ae-grid ae-grid--deep-equal-height">
+        <div class="ae-grid__item item-sm-4">
+          <div class="ae-grid ae-grid--column">
+            <div class="ae-grid__item"><div class="ae-test">[col-1]</div></div>
+            <div class="ae-grid__item"><div class="ae-test">[col-2]</div></div>
+            <div class="ae-grid__item">
+              <div class="ae-grid">
+                <div class="ae-grid__item item-sm-4">
+                  <div class="ae-test">[1]</div>
+                </div>
+                <div class="ae-grid__item item-sm-4">
+                  <div class="ae-test">[2]</div>
+                </div>
+                <div class="ae-grid__item item-sm-4">
+                  <div class="ae-grid ae-grid--column-reverse">
+                    <div class="ae-grid__item">
+                      <div class="ae-test">[1]</div>
+                    </div>
+                    <div class="ae-grid__item">
+                      <div class="ae-test">[2]</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="ae-grid__item item-sm-4">
-        <div class="ae-grid ae-grid--column">
-          <div class="ae-grid__item">
-            <div class="ae-test">[2]</div>
-          </div>
-          <div class="ae-grid__item">
-            <div class="ae-test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis officia atque dolores placeat dolor, vero veritatis enim sunt delectus nostrum suscipit repellendus hic commodi magnam reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque aspernatur.</div>
+        <div class="ae-grid__item item-sm-4">
+          <div class="ae-grid ae-grid--column">
+            <div class="ae-grid__item"><div class="ae-test">[2]</div></div>
+            <div class="ae-grid__item">
+              <div class="ae-test">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Debitis officia atque dolores placeat dolor, vero.
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="ae-grid__item item-sm-4">
-        <div class="ae-grid ae-grid--column">
-          <div class="ae-grid__item">
-            <div class="ae-test">[row]</div>
-          </div>
-          <div class="ae-grid__item">
-            <div class="ae-test">[row]</div>
-          </div>
-          <div class="ae-grid__item">
-            <div class="ae-test">[row]</div>
-          </div>
-          <div class="ae-grid__item">
-            <div class="ae-grid">
-              <div class="ae-grid__item item-xs--auto">
-                <div class="ae-test">[col]</div>
-              </div>
-              <div class="ae-grid__item item-xs--auto">
-                <div class="ae-test">[col]</div>
-              </div>
-              <div class="ae-grid__item item-xs--auto">
-                <div class="ae-grid ae-grid--column-reverse">
-                  <div class="ae-grid__item">
-                    <div class="ae-test">[1]</div>
-                  </div>
-                  <div class="ae-grid__item">
-                    <div class="ae-test">[2]</div>
-                  </div>
-                  <div class="ae-grid__item">
-                    <div class="ae-test">[3]</div>
+        <div class="ae-grid__item item-sm-4">
+          <div class="ae-grid ae-grid--column">
+            <div class="ae-grid__item"><div class="ae-test">[row]</div></div>
+            <div class="ae-grid__item"><div class="ae-test">[row]</div></div>
+            <div class="ae-grid__item"><div class="ae-test">[row]</div></div>
+            <div class="ae-grid__item">
+              <div class="ae-grid">
+                <div class="ae-grid__item item-xs--auto">
+                  <div class="ae-test">[col]</div>
+                </div>
+                <div class="ae-grid__item item-xs--auto">
+                  <div class="ae-test">[col]</div>
+                </div>
+                <div class="ae-grid__item item-xs--auto">
+                  <div class="ae-grid ae-grid--column-reverse">
+                    <div class="ae-grid__item">
+                      <div class="ae-test">[1]</div>
+                    </div>
+                    <div class="ae-grid__item">
+                      <div class="ae-test">[2]</div>
+                    </div>
+                    <div class="ae-grid__item">
+                      <div class="ae-test">[3]</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="ae-grid__item item-xs--auto">
-                <div class="ae-test">[col]</div>
+                <div class="ae-grid__item item-xs--auto">
+                  <div class="ae-test">[col]</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <h4>Masonry</h4>
+
+      <div
+        class="ae-masonry 
+            ae-masonry-sm-2 
+            ae-masonry-md-3 
+            ae-masonry-lg-4 
+            ae-masonry-xl-5"
+      >
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+        <div class="ae-masonry__item">
+          <div class="ae-test">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            officia atque dolores placeat dolor, vero veritatis enim sunt
+            delectus nostrum suscipit repellendus hic commodi magnam
+            reprehenderit vitae eveniet, asperiores est pariatur quisquam eaque
+            aspernatur.
+          </div>
+        </div>
+      </div>
     </div>
 
-  </div> <!-- ae-container -->
-</body>
+    <!-- ae-container -->
+  </body>
 </html>
