@@ -12,36 +12,34 @@ $ae-flex-order: true;
 $ae-masonry: true;
 
 $ae-columns: 12 !default;
-// $ae-gutter: 1.25rem !default;
-$ae-gutter: .5rem !default;
+$ae-gutter: 0.5rem !default;
 
 $ae-alt-grid: false !default;
 $ae-gutter-alt: 1.2766488% !default;
 $ae-gutter-alt-magic-number: $ae-gutter-alt * 12 !default;
-
 
 $ae-container-fixed-width: 980px;
 $ae-container-widths: (
   sm: 40rem,
   md: 48.75rem,
   lg: 62rem,
-  xl: 72.25rem
+  xl: 72.25rem,
 ) !default;
 
 $ae-container-fluid-widths: (
   default: 95vw,
   inner: 82vw,
-  full: 100%
+  full: 100%,
 ) !default;
 
 $ae-container-fluid-max-widths: (
   default: 88.8888889em,
   inner: 68.8888889em,
-  full: 100%
+  full: 100%,
 ) !default;
 
-/// $ae-container-max-width 
+/// $ae-container-max-width
 /// @var {null}     :: fluid container [ $ae-container-max-width: null !default ]
 /// @var {Number}   :: fixed container [ $ae-container-max-width: $ae-container-fixed-width !default ]
 /// @var {Map}      :: fixed container based on breakpoints
-$ae-container-max-width: $ae-container-widths !default; 
+$ae-container-max-width: $ae-container-widths !default;

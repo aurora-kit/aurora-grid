@@ -1,11 +1,10 @@
 // Auroræ Grid :: Functions
 
-
-/// %clearfix :: placeholder 
+/// %clearfix :: placeholder
 %clearfix {
   &:before,
   &:after {
-    content: " ";
+    content: ' ';
     display: table;
   }
   &:after {
@@ -13,20 +12,18 @@
   }
 }
 
-
-/// em :: @function to transform px (an unitless) to em 
+/// em :: @function to transform px (an unitless) to em
 /// @param {Number}  $px                      - Value to calculate in ems
 /// @param {Number}  $fz [$ae-font-size)]     - Base font size to make calculations
 @function em($px, $fz: $ae-font-size) {
-    @if unitless($px) {
-        @warn "#{$px} must be in pixels. Transformed to #{$px}px.";
-        @return em($px * 1px, $fz);
-    } @else if unit($px) == em {
-        @return $px;
-    }
-    @return ($px / $fz) * 1em;
+  @if unitless($px) {
+    @warn "#{$px} must be in pixels. Transformed to #{$px}px.";
+    @return em($px * 1px, $fz);
+  } @else if unit($px) == em {
+    @return $px;
+  }
+  @return ($px / $fz) * 1em;
 }
-
 
 /// ae-visual-debug :: @mixin to set debuggin styles to an element
 /// @param {Color}    $col             - Color to apply on borders and background (on hover)
@@ -47,21 +44,19 @@
       $nest: $nest #{&};
 
       #{$nest}:hover {
-       background-color: darken($col, 10*$i) !important; 
+        background-color: darken($col, 10 * $i) !important;
       }
     }
-    
   }
 }
 
-
 /// ae-text-debug :: @mixin to set text on body for debugging purposes
 /// @param {String} $text             - Text to show on the upper right corner of the page
-/// @param {Color}  $color            - Text color 
+/// @param {Color}  $color            - Text color
 /// @param {Color}  $bg               - Background color
 @mixin ae-text-debug($text, $color, $bg) {
   &:after {
-    background-color: rgba($bg, .7);
+    background-color: rgba($bg, 0.7);
     color: $color;
     // Basic style, could override through @content
     font: 16px/1.5 sans-serif;
@@ -80,35 +75,47 @@
 /// @param {String | Number}  $max [null]             - Value to set `max-width` query or key map that represents it
 /// @param {String}           $type [all]             - Media type like `screen` or `print`
 /// @param {Map}              $bps [$ae-breakpoints]  - Map to find $min or $max params if necessary
-@mixin ae-breakpoints($min:null, $max: null, $type: all, $bps: $ae-breakpoints) {
-  
+@mixin ae-breakpoints(
+  $min: null,
+  $max: null,
+  $type: all,
+  $bps: $ae-breakpoints
+) {
   // Min
   $min-val: null;
   @if type-of($min) == number {
     $min-val: if($min != 0, em($min), 0);
   } @else {
-    $min-val: if(map-has-key($bps, $min), if(map-get($bps, $min) != 0, em(map-get($bps, $min)), 0), null);
+    $min-val: if(
+      map-has-key($bps, $min),
+      if(map-get($bps, $min) != 0, em(map-get($bps, $min)), 0),
+      null
+    );
   }
 
   // Max
   $max-val: null;
   @if type-of($max) == number {
-      $max-val: em($max);
+    $max-val: em($max);
   } @else {
-      $max-val: if(map-has-key($bps, $max), em(map-get($bps, $max) - .01em), null);
+    $max-val: if(
+      map-has-key($bps, $max),
+      em(map-get($bps, $max) - 0.01em),
+      null
+    );
   }
 
   // Output
   $query: null;
   $min-query: if($min-val and $min-val != 0, '(min-width: #{$min-val})', null);
   $max-query: if($max-val, '(max-width: #{$max-val})', null);
-  $type-query: if($type == all and ($min-val or $max-val), null, $type );
+  $type-query: if($type == all and ($min-val or $max-val), null, $type);
   $queries: (
     type: $type-query,
     min: $min-query,
-    max: $max-query
+    max: $max-query,
   );
-  
+
   @each $prop, $value in $queries {
     @if map-get($queries, $prop) {
       @if not $query {
@@ -118,7 +125,7 @@
       }
     }
   }
-  
+
   @if $min-val and not $min-query and not $max-query {
     @content;
   } @else {
@@ -126,25 +133,22 @@
       @content;
     }
   }
-
 }
-
 
 /// apply-in-breakpoints :: @mixin to apply classes in breakponts with a suffix
 /// suffif to use like ae-no-margin-#{$_bp} will be: ae-no-margin-sm, ae-no-margin-md, ... depending on the map passed
 /// @param {Map}  $bps [$ae-breakpoints]             - Map of breakpoints (name: size, ...)
 @mixin apply-in-breakpoints($bps: $ae-breakpoints) {
   @each $bp in map-keys($bps) {
-    $_bp: $bp !global; 
+    $_bp: $bp !global;
 
     @include ae-breakpoints($bp) {
       @content;
     }
 
     $_bp: null;
-  } 
+  }
 }
-
 
 /// ae-item-space :: @mixin to set the space for an item
 /// @param {Number}  $col                     - The quantity of columns to fill
@@ -157,14 +161,12 @@
   }
 }
 
-
 /// ae-item-offset :: @mixin to set the offset for an item
 /// @param {Number}  $col                     - The quantity of columns to move
 /// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
 @mixin ae-item-offset($col, $cols: $ae-columns) {
   margin-left: percentage($col / $cols);
 }
-
 
 /// ae-item-push :: @mixin to push right an item
 /// @param {Number}  $col                     - The quantity of columns to move
@@ -174,7 +176,6 @@
   right: auto;
 }
 
-
 /// ae-item-push :: @mixin to pull left an item
 /// @param {Number}  $col                     - The quantity of columns to move
 /// @param {Number}  $cols [$ae-columns]      - Total columns of the grid
@@ -182,7 +183,6 @@
   left: auto;
   right: if($col > 0, percentage($col / $cols), auto);
 }
-
 
 /// ae-container :: @mixin to set the styles for a Container element
 /// @param {Number}  $gut [$ae-gutter]                                 - The gutter to apply on both sides
@@ -193,12 +193,12 @@
   margin-left: auto;
   padding-left: ($gut / 2);
   padding-right: ($gut / 2);
-  
+
   $units: em, ex, ch, rem, vh, vw, vmin, vmax, px, mm, cm, in, pt, pc, '%';
 
   @if type-of($max-width) == number {
     @if not unitless($max-width) and index($units, unit($max-width)) {
-      max-width: $max-width;  
+      max-width: $max-width;
     }
   } @else if type-of($max-width) == map {
     @each $bp, $size in $max-width {
@@ -209,29 +209,31 @@
   }
 }
 
-
 /// ae-container-fluid :: @mixin to set the styles for a fluid Container element
 /// @param {Number}  $gut [$ae-gutter]                                         - The gutter to apply on both sides
 /// @param {Number}  $gut [$ae-gutter]                                         - The gutter to apply on both sides
 /// @param {Number | Map}  $max-widths [$ae-container-fluid-max-widths]        - The max widths
-@mixin ae-container-fluid($gut: $ae-gutter, $width: $ae-container-fluid-widths, $max-width: $ae-container-fluid-max-widths) {
+@mixin ae-container-fluid(
+  $gut: $ae-gutter,
+  $width: $ae-container-fluid-widths,
+  $max-width: $ae-container-fluid-max-widths
+) {
   @extend %clearfix;
   margin-right: auto;
   margin-left: auto;
-  
+
   $units: em, ex, ch, rem, vh, vw, vmin, vmax, px, mm, cm, in, pt, pc, '%';
-  
+
   @if type-of($max-width) == number {
     @if not unitless($max-width) and index($units, unit($max-width)) {
       max-width: $max-width;
-      width: $width;  
+      width: $width;
     }
   } @else if type-of($max-width) == map {
-    
     @include ae-breakpoints(sm) {
       max-width: map-get($max-width, 'default');
       width: map-get($width, 'default');
-      
+
       &--inner {
         max-width: map-get($max-width, 'inner');
         width: map-get($width, 'inner');
@@ -244,20 +246,20 @@
       padding-right: 0;
       width: map-get($width, 'full');
     }
-    
   }
 
   @include ae-breakpoints($max: lg) {
     padding-left: ($gut / 2);
     padding-right: ($gut / 2);
   }
-
 }
 
 /// ae-grid :: @mixin to set the styles for a Grid element
 /// @param {Number}  $gut [$ae-gutter]        - The gutter to balance on both sides
 @mixin ae-grid($gut: $ae-gutter) {
-  @if $ae-grid-float { @extend %clearfix; }
+  @if $ae-grid-float {
+    @extend %clearfix;
+  }
   display: flex;
   flex-wrap: wrap;
   margin-left: ($gut / -2);
@@ -280,16 +282,22 @@
 /// @param {Number}  $gut [$ae-gutter]               - The gutter to apply on both sides of each item
 /// @param {Map}     $bps [$ae-breakpoints]          - The breakpoints on which loop and set the media queries
 ///
-/// TODO: is correct the term '.item-#{$bp}--auto' since the behaviour is 'equal' 
+/// TODO: is correct the term '.item-#{$bp}--auto' since the behaviour is 'equal'
 ///       and 'auto' should acts based on its content?
-@mixin ae-grid-items($cols: $ae-columns, $gut: $ae-gutter, $bps: $ae-breakpoints, $move: true, $flex-align: $ae-flex-align, $flex-order: $ae-flex-order) {
-  
+@mixin ae-grid-items(
+  $cols: $ae-columns,
+  $gut: $ae-gutter,
+  $bps: $ae-breakpoints,
+  $move: true,
+  $flex-align: $ae-flex-align,
+  $flex-order: $ae-flex-order
+) {
   .#{$ae}-grid__item {
     flex: $ae-flex-default-status;
     min-height: 1px;
     padding-left: $gut / 2;
     padding-right: $gut / 2;
-    position: relative;    
+    position: relative;
     max-width: 100%;
   }
 
@@ -302,11 +310,13 @@
 
       @for $i from 1 through $cols {
         .item-#{$bp}-#{$i} {
-          @if $ae-grid-float { float: left; }
+          @if $ae-grid-float {
+            float: left;
+          }
           @include ae-item-space($i, $cols);
         }
       }
-      
+
       @if $move {
         @each $m in (pull, push, offset) {
           @for $i from 0 through $cols {
@@ -322,20 +332,36 @@
           }
         }
       }
-      
-      @if $flex-align {
-        .item-#{$bp}--top { align-self: flex-start; }
-        .item-#{$bp}--center { align-self: center; }
-        .item-#{$bp}--bottom { align-self: flex-end; }
 
-        .items-#{$bp}--top { align-items: flex-start; }
-        .items-#{$bp}--center { align-items: center; }
-        .items-#{$bp}--bottom { align-items: flex-end; }
+      @if $flex-align {
+        .item-#{$bp}--top {
+          align-self: flex-start;
+        }
+        .item-#{$bp}--center {
+          align-self: center;
+        }
+        .item-#{$bp}--bottom {
+          align-self: flex-end;
+        }
+
+        .items-#{$bp}--top {
+          align-items: flex-start;
+        }
+        .items-#{$bp}--center {
+          align-items: center;
+        }
+        .items-#{$bp}--bottom {
+          align-items: flex-end;
+        }
       }
 
       @if $flex-order {
-        .item-#{$bp}--start { order: -1; }
-        .item-#{$bp}--end { order: $cols + 1; }
+        .item-#{$bp}--start {
+          order: -1;
+        }
+        .item-#{$bp}--end {
+          order: $cols + 1;
+        }
 
         @for $i from 1 through $cols {
           .item-#{$bp}--order-#{$i} {
@@ -343,12 +369,9 @@
           }
         }
       }
-
     }
   }
-
 }
-
 
 /// ae-masonry :: @mixin to set the styles for a Masonry grid
 /// @param {Number}  $cols [$ae-columns]             - The total of columns
@@ -364,7 +387,7 @@
     margin: 0 0 $gut/4;
     width: 100%;
   }
-  
+
   @each $bp in map-keys($bps) {
     @include ae-breakpoints($bp) {
       @for $i from 1 through $cols {
@@ -374,5 +397,4 @@
       }
     }
   }
-
 }

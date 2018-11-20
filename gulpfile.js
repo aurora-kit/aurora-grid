@@ -1,61 +1,56 @@
-var gulp          = require('gulp'),
-    autoprefixer  = require('gulp-autoprefixer'),
-    csscomb       = require('gulp-csscomb'),
-    cssmin        = require('gulp-cssmin'),
-    header        = require('gulp-header'),
-    livereload    = require('gulp-livereload'),
-    notify        = require('gulp-notify'),
-    plumber       = require('gulp-plumber'),
-    rename        = require('gulp-rename'),
-    sass          = require('gulp-sass'),
-    size          = require('gulp-size'),
-    package       = require('./package.json');
+const { src, dest, watch } = require('gulp')
+const autoprefixer = require('autoprefixer')
+const postcss = require('gulp-postcss')
+const cssmin = require('gulp-cssmin')
+const header = require('gulp-header')
+const notify = require('gulp-notify')
+const plumber = require('gulp-plumber')
+const rename = require('gulp-rename')
+const sass = require('gulp-sass')
+const size = require('gulp-size')
+const package = require('./package.json')
 
-
-var banner = [
+const banner = [
   '/* * * * * * * * * * * * * * * * * * * * *\\ \n',
-    ' <%= package.name %> ',
-    'v<%= package.version %> \n ',
-    '<%= package.description %> \n',
-    ' (c) ' + new Date().getFullYear() + ' <%= package.author.name %> <<%= package.author.email %>> (<%= package.author.url %>) \n',
-    ' <%= package.homepage %> \n',
-    ' Licensed under ' + ' <%= package.license %> \n',
+  ' <%= package.name %> ',
+  'v<%= package.version %> \n ',
+  '<%= package.description %> \n',
+  ' (c) ' +
+    new Date().getFullYear() +
+    ' <%= package.author.name %> <<%= package.author.email %>> (<%= package.author.url %>) \n',
+  ' <%= package.homepage %> \n',
+  ' Licensed under ' + ' <%= package.license %> \n',
   '\\* * * * * * * * * * * * * * * * * * * * */',
-  '\n'
-].join('');
+  '\n',
+].join('')
 
+function onError(err) {
+  notify.onError({
+    title: 'Scss error',
+    message: 'Error: <%= error.message %>',
+    sound: 'Bottle',
+  })(err)
+  this.emit('end')
+}
 
-gulp.task('scss', function() {
-  var onError = function(err) {
-    notify.onError({
-      title:    "Scss error",
-      message:  "Error: <%= error.message %>",
-      sound:    "Bottle"
-    })(err);
-    this.emit('end');
-  }
-
-  return gulp.src('src/**/*.scss')
-    .pipe(plumber({errorHandler: onError}))
+function scss() {
+  return src('src/**/*.scss')
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(sass())
-    .pipe(header(banner, { package : package }))
-    .pipe(autoprefixer())
-    .pipe(csscomb())
-    .pipe(gulp.dest('dist/'))
-    .pipe(rename({suffix: '.min'}))
+    .pipe(header(banner, { package: package }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(dest('dist/'))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(cssmin())
     .pipe(size({ gzip: true, showFiles: true }))
-    .pipe(gulp.dest('dist/'))
-    .pipe(notify({
-      onLast: true,
-      message: 'scss task complete!'
-    }));
+    .pipe(dest('dist/'))
+    .pipe(
+      notify({
+        onLast: true,
+        message: 'scss task complete!',
+      })
+    )
+}
 
-});
-
-gulp.task('watch', function() {
-  gulp.watch('src/**/*.scss', ['scss']);
-  // livereload.listen();
-});
-
-gulp.task('default', ['scss']);
+exports.watch = () => watch('src/**/*.scss', scss)
+exports.default = scss

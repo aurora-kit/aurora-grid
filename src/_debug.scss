@@ -4,7 +4,7 @@
   @include ae-visual-debug(map-get($debug-colors, high), 1px, false);
 }
 
-.#{$ae}-grid { 
+.#{$ae}-grid {
   @include ae-visual-debug(map-get($debug-colors, mid), -1px, false);
 }
 
@@ -12,15 +12,17 @@
   @include ae-visual-debug(map-get($debug-colors, low), -2px, true, 3);
 }
 
-
-
 @each $bp, $value in $ae-breakpoints {
   @include ae-breakpoints($bp) {
     body {
-      @include ae-text-debug('#{$bp}: #{$value}', map-get($debug-colors, mid), map-get($debug-colors, zero)) {
+      @include ae-text-debug(
+        '#{$bp}: #{$value}',
+        map-get($debug-colors, mid),
+        map-get($debug-colors, zero)
+      ) {
         top: 0;
         right: 0;
-      } 
+      }
     }
   }
 }

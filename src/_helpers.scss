@@ -11,7 +11,8 @@
 }
 
 .#{$ae}-grid--deepcollapse {
-  &, & .#{$ae}-grid {
+  &,
+  & .#{$ae}-grid {
     margin-left: 0;
     margin-right: 0;
   }

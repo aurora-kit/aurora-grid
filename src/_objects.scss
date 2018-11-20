@@ -15,12 +15,12 @@
 @if $ae-alt-grid {
   .#{$ae}-grid--alt {
     @include ae-grid($ae-gutter-alt);
-    
+
     // Only apply '--alt' modifier for over 'sm' breakpoint
     @include ae-breakpoints('sm') {
       @for $i from 1 to ($ae-columns - 1) {
         &#{$i} {
-          @include ae-grid( $ae-gutter-alt-magic-number / $i);
+          @include ae-grid($ae-gutter-alt-magic-number / $i);
         }
       }
     }
@@ -28,24 +28,20 @@
 
   .#{$ae}-grid__item--alt {
     @include ae-grid-item($ae-gutter-alt);
-    
+
     // Only apply '--alt' modifier for over 'sm' breakpoint
     @include ae-breakpoints('sm') {
       @for $i from 1 to ($ae-columns - 1) {
         &#{$i} {
-          @include ae-grid-item( $ae-gutter-alt-magic-number / $i);
+          @include ae-grid-item($ae-gutter-alt-magic-number / $i);
         }
       }
     }
   }
 }
 
-
 @include ae-grid-items();
 
 @if $ae-masonry {
   @include ae-masonry();
 }
-
-
-
