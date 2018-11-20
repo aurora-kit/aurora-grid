@@ -1,6 +1,6 @@
 {
   "name": "@aurora-kit/grid",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "Grid system for Aurora Kit",
   "main": "index.js",
   "scripts": {
