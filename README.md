@@ -18,7 +18,7 @@ You can also install through
 npm i @aurora-kit/grid
 ```
 
-### Custom Build
+### Custom Build
 
 Aurora Grid was created using [Sass](http://sass-lang.com/) . It includes some settings and mixins to control and create custom builds for advanced needs.
 For an easy to use development process you just have to install the `npm` packages and start editing, building and exporting your custom `aurora-grid.css` file. From the Terminal App, in the path where you have the Aurora Grid folder, you can run:
