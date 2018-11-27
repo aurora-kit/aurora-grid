@@ -29,16 +29,15 @@
     "gulp": "4.0.0",
     "gulp-cssmin": "0.2.0",
     "gulp-header": "2.0.5",
-    "gulp-livereload": "4.0.0",
     "gulp-notify": "3.2.0",
-    "gulp-plumber": "^1.0.1",
+    "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "4.0.2",
     "gulp-size": "3.0.0"
   },
   "dependencies": {
-    "aurora-shared": "^1.0.0"
+    "aurora-shared": "1.0.1"
   },
   "files": [
     "dist",
